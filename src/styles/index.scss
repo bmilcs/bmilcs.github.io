@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Love+Light&family=Roboto:wght@300;400;900&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --ff-title: "Love Light", cursive;
+  --ff-main: "Roboto", sans-serif;
+
+  --clr-accent-100: #ffcc66;
+  --clr-accent-200: #f28779;
+  --clr-neutral-900: #171b24;
+  --clr-neutral-800: #242936;
+  --clr-neutral-100: #707a8c;
+
+  --transition: 0.2s all ease-in-out;
+}
+
+body {
+  font-family: var(--ff-main);
+  background: var(--clr-neutral-900);
+  color: var(--clr-neutral-100);
+}

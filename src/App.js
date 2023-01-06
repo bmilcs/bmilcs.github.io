@@ -1,7 +1,10 @@
+import ComingSoon from "./components/ComingSoon";
+import "./styles/App.scss";
+
 function App() {
   return (
     <div className="App">
-      <h1>bmilcs.com</h1>
+      <ComingSoon />
     </div>
   );
 }
