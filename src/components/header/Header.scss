@@ -1,0 +1,16 @@
+header {
+  display: grid;
+  place-items: center;
+  padding-block: 10vh;
+
+  .intro {
+    p {
+      margin-block: 1rem;
+      color: var(--clr-neutral-700);
+    }
+
+    h2 {
+      color: var(--clr-neutral-700);
+    }
+  }
+}
