@@ -32,7 +32,6 @@
   "tsconfigRootDir": ".",
   "project": [
   "./tsconfig.json",
-  "./vite.config.ts",
   ]
   },
 
