@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;700;900&display=swap');
+
+:root {
+  // text
+  --ff-accent: 'Inter Tight', sans-serif;
+  --ff-main: var(--ff-accent);
+  --fw-xbold: 900;
+  --fw-bold: 700;
+  --fw-normal: 400;
+  --fw-thin: 300;
+
+  // color
+  --clr-neutral-900: #111111;
+  --clr-neutral-800: #191324;
+  --clr-neutral-700: #333333cc;
+  // --clr-neutral-600: #;
+  // --clr-neutral-500: #;
+  // --clr-neutral-400: #;
+  --clr-neutral-300: #828282;
+  --clr-neutral-200: #bdbdbd;
+  --clr-neutral-100: #f0f0f0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--ff-accent);
+  font-weight: var(--fw-xbold);
+  // avoid text overflows
+  overflow-wrap: break-word;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: var(--ff-accent);
+
+  // allow percentage-based heights
+  height: 100%;
+  line-height: 1;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  // remove built-in form typography styles
+  font: inherit;
+}
+
+#root,
+#__next {
+  // create a root stacking context
+  isolation: isolate;
+}
+
+ol,
+ul {
+  list-style: none;
+}
