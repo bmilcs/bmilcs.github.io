@@ -1,0 +1,87 @@
+.hero {
+  --spacer: 1vh;
+  --timer: 1s;
+
+  height: 100%;
+  padding: 0.25rem;
+
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+
+  animation: fadeInFromLeft var(--timer) cubic-bezier(0, 1.32, 1, 1) 1 normal forwards;
+
+  &__text {
+    transform: translateY(-10vh);
+
+    // hi my name is
+    p:first-child {
+      margin-bottom: calc(var(--spacer) * 3);
+
+      font-size: clamp(0.85rem, 1.75vw, 1.35rem);
+      font-weight: var(--fw-thin);
+      color: var(--clr-neutral-800);
+    }
+
+    // Bryan Miller
+    h2 {
+      margin-bottom: calc(var(--spacer) * 0.8);
+
+      font-size: clamp(2.5rem, 8vw, 6rem);
+      font-weight: var(--fw-xbold);
+      color: var(--clr-neutral-900);
+    }
+
+    // A Frontend Web Developer
+    h3 {
+      margin-bottom: calc(var(--spacer) * 6);
+
+      font-size: clamp(1.15rem, 4vw, 3rem);
+      font-weight: var(--fw-bold);
+      color: var(--clr-neutral-700);
+
+      span {
+        position: relative;
+      }
+    }
+
+    // Small description
+    p:nth-of-type(2) {
+      margin-bottom: calc(var(--spacer) * 4);
+      max-width: 40ch;
+
+      font-size: clamp(0.85rem, 1.75vw, 1rem);
+      color: var(--clr-neutral-800);
+      line-height: 1.5;
+    }
+
+    // Underline
+    span:before {
+      content: '';
+      position: absolute;
+      height: min(1.5vw, 12px);
+      background-color: var(--clr-primary-100);
+      width: 90%;
+      bottom: max(calc(-6px - 1vw), -16px);
+      // bottom: -14px;
+      right: 5%;
+      transform: rotate(-2deg) skew(40deg);
+      border-radius: var(--border-radius-100);
+    }
+  }
+}
+
+@keyframes fadeInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translate(-100vw, -10vh);
+  }
+  30% {
+    opacity: 0.1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
