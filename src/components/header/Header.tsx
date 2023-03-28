@@ -1,13 +1,24 @@
+import BMIcon from '../../assets/BMIcon';
 import './Header.scss';
 
 function Header() {
   return (
     <header>
-      <div className='intro'>
-        <img src='https://source.unsplash.com/random/400x400' alt='' />
-        <p>Hi. My name is</p>
-        <h1>Bryan Miller</h1>
-        <h2>A Frontend Web Developer</h2>
+      <div className='wrapper'>
+        <BMIcon />
+        <nav>
+          <ul>
+            <li>
+              <a href='#portfolio'>portfolio</a>
+            </li>
+            <li>
+              <a href='#about'>about</a>
+            </li>
+            <li>
+              <a href='#contact'>contact</a>
+            </li>
+          </ul>
+        </nav>
       </div>
     </header>
   );
