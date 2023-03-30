@@ -17,15 +17,17 @@ function Hero() {
   }, []);
 
   return (
-    <section className='hero'>
+    <section className='hero wrapper centered_grid'>
       <div className='hero__text'>
-        <p>Hi. My name is...</p>
+        {/* <p>Hi! Let me introduce myself. My name is... </p> */}
         <h2>Bryan Miller</h2>
         <h3>
           A Frontend <span>Web Developer</span>
         </h3>
-        <p>I love coding, being creative and solving problems. </p>
-        <Button type='standard'>My Projects</Button>
+        {/* <p>I love coding, being creative and solving problems. </p> */}
+        <a href='#portfolio'>
+          <Button type='standard'>My Portfolio</Button>
+        </a>
       </div>
       {/* <img src='https://source.unsplash.com/random/400x400' alt='' /> */}
     </section>

@@ -5,11 +5,6 @@
   height: 100%;
   padding: 0.25rem;
 
-  display: grid;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
-
   animation: fadeInFromLeft var(--timer) cubic-bezier(0, 1.32, 1, 1) 1 normal forwards;
 
   &__text {
@@ -19,27 +14,27 @@
     p:first-child {
       margin-bottom: calc(var(--spacer) * 3);
 
-      font-size: clamp(0.85rem, 1.75vw, 1.35rem);
       font-weight: var(--fw-thin);
+      font-size: clamp(0.85rem, 1.75vw, 1.35rem);
       color: var(--clr-neutral-800);
     }
 
     // Bryan Miller
     h2 {
-      margin-bottom: calc(var(--spacer) * 0.8);
+      margin-bottom: calc(var(--spacer) * 0.5);
 
-      font-size: clamp(2.5rem, 8vw, 6rem);
       font-weight: var(--fw-xbold);
-      color: var(--clr-neutral-900);
+      font-size: clamp(2.5rem, 8vw, 6rem);
+      color: var(--clr-neutral-800);
     }
 
     // A Frontend Web Developer
     h3 {
-      margin-bottom: calc(var(--spacer) * 6);
+      margin-bottom: calc(var(--spacer) * 5);
 
-      font-size: clamp(1.15rem, 4vw, 3rem);
       font-weight: var(--fw-bold);
-      color: var(--clr-neutral-700);
+      font-size: clamp(1.25rem, 4vw, 3rem);
+      color: var(--clr-neutral-500);
 
       span {
         position: relative;
@@ -62,12 +57,12 @@
       position: absolute;
       height: min(1.5vw, 12px);
       background-color: var(--clr-primary-100);
-      width: 90%;
-      bottom: max(calc(-6px - 1vw), -16px);
+      width: 75%;
+      bottom: max(calc(-4px - 1.2vw), -16px);
       // bottom: -14px;
-      right: 5%;
-      transform: rotate(-2deg) skew(40deg);
-      border-radius: var(--border-radius-100);
+      right: 12.5%;
+      transform: rotate(-2deg) skew(20deg);
+      border-radius: 100vh;
     }
   }
 }
