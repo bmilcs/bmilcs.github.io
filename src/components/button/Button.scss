@@ -22,10 +22,10 @@
     display: grid;
     place-items: center;
 
-    font-size: 1rem;
+    font-size: min(1.25rem, 4vw);
     font-weight: var(--fw-bold);
 
-    padding: 1rem 2rem;
+    padding: clamp(0.75rem, 1.5vw, 1.25rem) min(2rem, 6vw);
     border-radius: var(--border-radius-100);
   }
 

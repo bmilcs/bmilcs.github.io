@@ -10,19 +10,21 @@
   --fw-thin: 300;
 
   // color
-  --clr-neutral-900: #0a0a0a;
-  --clr-neutral-800: #292929;
-  --clr-neutral-700: #575757cc;
-  // --clr-neutral-600: #;
-  // --clr-neutral-500: #;
-  // --clr-neutral-400: #;
-  --clr-neutral-300: #cccccc;
-  --clr-neutral-200: #eeeeee;
-  --clr-neutral-100: #f8f8f8;
+  --clr-neutral-900: hsla(0, 0%, 5%, 1);
+  --clr-neutral-800: hsla(0, 0%, 20%, 1);
+  --clr-neutral-700: hsla(0, 0%, 30%, 1);
+  --clr-neutral-600: hsla(0, 0%, 40%, 1);
+  --clr-neutral-500: hsla(0, 0%, 50%, 1);
+  --clr-neutral-400: hsla(0, 0%, 80%, 1);
+  --clr-neutral-300: hsla(0, 0%, 88%, 1);
+  --clr-neutral-200: hsla(0, 0%, 93%, 1);
+  --clr-neutral-100: hsla(0, 0%, 97%, 1);
 
-  --clr-primary-100: #468ad8;
-  --clr-primary-200: #29486b;
-  --clr-accent-100: #7ec50b;
+  --clr-primary-100: hsl(212, 65%, 56%, 1);
+  --clr-primary-200: hsl(212, 65%, 66%, 1);
+  --clr-accent-100: hsl(83, 89%, 41%);
+
+  --box-shadow-900: 5px 5px 5px 5px var(--clr-neutral-100);
 
   --border-radius-100: 4px;
   --border-radius-200: 8px;
@@ -42,6 +44,10 @@ h6 {
   overflow-wrap: break-word;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 h1 {
   font-weight: var(--fw-xbold);
 }
@@ -56,7 +62,7 @@ h1 {
 
 body {
   font-family: var(--ff-accent);
-  background: var(--clr-neutral-100);
+  background: var(--clr-neutral-200);
   color: var(--clr-neutral-900);
 
   // allow percentage-based heights

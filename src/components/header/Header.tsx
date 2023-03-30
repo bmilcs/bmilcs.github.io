@@ -3,23 +3,21 @@ import './Header.scss';
 
 function Header() {
   return (
-    <header>
-      <div className='wrapper'>
-        <BMIcon />
-        <nav>
-          <ul>
-            <li>
-              <a href='#portfolio'>portfolio</a>
-            </li>
-            <li>
-              <a href='#about'>about</a>
-            </li>
-            <li>
-              <a href='#contact'>contact</a>
-            </li>
-          </ul>
-        </nav>
-      </div>
+    <header className='column'>
+      <BMIcon />
+      <nav>
+        <ul>
+          <li>
+            <a href='#portfolio'>portfolio</a>
+          </li>
+          <li>
+            <a href='#about'>about</a>
+          </li>
+          <li>
+            <a href='#contact'>contact</a>
+          </li>
+        </ul>
+      </nav>
     </header>
   );
 }

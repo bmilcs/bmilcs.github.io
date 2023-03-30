@@ -17,7 +17,7 @@ function Hero() {
   }, []);
 
   return (
-    <section className='hero wrapper centered_grid'>
+    <section className='hero column centered_grid'>
       <div className='hero__text'>
         {/* <p>Hi! Let me introduce myself. My name is... </p> */}
         <h2>Bryan Miller</h2>
