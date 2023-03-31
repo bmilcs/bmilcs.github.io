@@ -2,22 +2,18 @@
   --spacer: 1vh;
   --timer: 1s;
 
-  height: 100%;
-  padding: 0.25rem;
-
   animation: fadeInFromLeft var(--timer) cubic-bezier(0, 1.32, 1, 1) 1 normal forwards;
 
   &__text {
     transform: translateY(-10vh);
-
     // hi my name is
-    p:first-child {
-      margin-bottom: calc(var(--spacer) * 3);
+    // p:first-child {
+    //   margin-bottom: calc(var(--spacer) * 3);
 
-      font-weight: var(--fw-thin);
-      font-size: clamp(0.85rem, 1.75vw, 1.35rem);
-      color: var(--clr-neutral-800);
-    }
+    //   font-weight: var(--fw-thin);
+    //   font-size: clamp(0.85rem, 1.75vw, 1.35rem);
+    //   color: var(--clr-neutral-800);
+    // }
 
     // Bryan Miller
     h2 {
@@ -28,7 +24,7 @@
       color: var(--clr-neutral-800);
     }
 
-    // A Frontend Web Developer
+    // A Frontend
     h3 {
       margin-bottom: calc(var(--spacer) * 5);
 
@@ -36,35 +32,56 @@
       font-size: clamp(1.25rem, 4vw, 3rem);
       color: var(--clr-neutral-500);
 
+      // Web Developer
       span {
         position: relative;
+
+        // Underline
+        &:before {
+          content: '';
+          position: absolute;
+          height: min(1.5vw, 12px);
+          background-color: var(--clr-primary-100);
+          width: 75%;
+          bottom: max(calc(-4px - 1.2vw), -16px);
+          // bottom: -14px;
+          right: 12.5%;
+          transform: rotate(-2deg) skew(20deg);
+          border-radius: 100vh;
+        }
       }
     }
 
     // Small description
-    p:nth-of-type(2) {
-      margin-bottom: calc(var(--spacer) * 4);
-      max-width: 40ch;
+    // p:nth-of-type(2) {
+    //   margin-bottom: calc(var(--spacer) * 4);
+    //   max-width: 40ch;
 
-      font-size: clamp(0.85rem, 1.75vw, 1rem);
-      color: var(--clr-neutral-800);
-      line-height: 1.5;
-    }
-
-    // Underline
-    span:before {
-      content: '';
-      position: absolute;
-      height: min(1.5vw, 12px);
-      background-color: var(--clr-primary-100);
-      width: 75%;
-      bottom: max(calc(-4px - 1.2vw), -16px);
-      // bottom: -14px;
-      right: 12.5%;
-      transform: rotate(-2deg) skew(20deg);
-      border-radius: 100vh;
-    }
+    //   font-size: clamp(0.85rem, 1.75vw, 1rem);
+    //   color: var(--clr-neutral-800);
+    //   line-height: 1.5;
+    // }
   }
+}
+
+.custom-shape-divider-bottom-1680202580 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-bottom-1680202580 svg {
+  position: relative;
+  display: block;
+  width: calc(135% + 1.3px);
+  height: 78px;
+}
+
+.custom-shape-divider-bottom-1680202580 .shape-fill {
+  fill: var(--clr-portfolio-bg);
 }
 
 @keyframes fadeInFromLeft {
