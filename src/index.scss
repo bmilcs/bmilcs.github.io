@@ -1,15 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;900&family=Oxygen:wght@300;400;700&display=swap');
 
 :root {
   // text
   --ff-accent: 'Inter Tight', sans-serif;
-  --ff-main: var(--ff-accent);
+  --ff-main: 'Oxygen', sans-serif;
   --fw-xbold: 900;
   --fw-bold: 700;
   --fw-normal: 400;
   --fw-thin: 300;
 
   // color
+  --clr-neutral-900-t: hsla(0, 0%, 5%, 0.15);
   --clr-neutral-900: hsla(0, 0%, 5%, 1);
   --clr-neutral-800: hsla(0, 0%, 20%, 1);
   --clr-neutral-700: hsla(0, 0%, 30%, 1);
@@ -19,17 +20,21 @@
   --clr-neutral-300: hsla(0, 0%, 88%, 1);
   --clr-neutral-200: hsla(0, 0%, 93%, 1);
   --clr-neutral-100: hsla(0, 0%, 97%, 1);
-
   --clr-primary-100: hsl(212, 65%, 56%, 1);
   --clr-primary-200: hsl(212, 65%, 66%, 1);
-  --clr-accent-100: hsl(83, 89%, 41%);
+  --clr-accent-100: hsl(56, 91%, 47%);
 
-  --box-shadow-900: 5px 5px 5px 5px var(--clr-neutral-100);
+  --clr-portfolio-bg: var(--clr-neutral-900);
+
+  --box-shadow-100: 0px 3px 8px var(--clr-neutral-900-t);
+  --box-shadow-900: 0px 18px 32px var(--clr-neutral-900);
 
   --border-radius-100: 4px;
   --border-radius-200: 8px;
   --border-radius-300: 12px;
   --border-radius-400: 16px;
+
+  --transition-short: 0.25s;
 }
 
 h1,
@@ -61,7 +66,7 @@ h1 {
 }
 
 body {
-  font-family: var(--ff-accent);
+  font-family: var(--ff-main);
   background: var(--clr-neutral-200);
   color: var(--clr-neutral-900);
 
