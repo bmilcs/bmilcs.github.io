@@ -44,11 +44,14 @@ export interface IProject {
     repo: string;
   };
   techIcons: TTech[];
-  screenshots: {
-    url: string;
-    alt: string;
-  }[];
+  screenshots: TScreenshot[];
+  description?: { type: 'header' | 'p'; value: string }[];
 }
+
+export type TScreenshot = {
+  url: string;
+  alt: string;
+};
 
 type TTech =
   | 'react'
@@ -76,6 +79,35 @@ const PROJECTS: IProject[] = [
     screenshots: [
       { url: comedyDbDesktopHome, alt: 'The Comedy DB Desktop Home Screenshot' },
       { url: comedyDbDesktopSpecial, alt: 'The Comedy DB Desktop Special Screenshot' },
+    ],
+    description: [
+      { type: 'header', value: 'The Inspiration' },
+      {
+        type: 'p',
+        value:
+          'I love standup and listen to comedy podcasts more often than I would like to admit. With the countless streaming platforms out there, even I find it challenging to stay up to date and not miss out when a comedian releases new a special. ',
+      },
+      {
+        type: 'p',
+        value:
+          'Standup comedy is a fairly small community, but I wanted users to find new comedians to follow and to be able to add their favorite comedians if missing from the site. Email notifications were a must. Nobody wants to check a website everyday for content that is released as infrequently as standup specials are. The most prolific comedians release new work once a year, but more often that not, there are several years in between. ',
+      },
+      { type: 'header', value: 'High Level Breakdown' },
+      {
+        type: 'p',
+        value:
+          'Powered by TMDB, Firebase Firestore & Cloud Functions running on Node v18, I created pubsub functions that fetch the latest specials for all comedians in the database. When users sign up and favorite a comedian, they receive e-mail notifications (via node-mailer) & GUI notifications (via database entries) whenever that comedian releases a new special. ',
+      },
+      {
+        type: 'p',
+        value:
+          'Users can add dynamically new comedians to the site by using the search bar. The initial search results page shows existing comedians and a list of people from the TMDB People API. To prevent actors from being added, extra API calls are issued to verify that the person has content with the TMDB standup keyword.',
+      },
+      {
+        type: 'p',
+        value:
+          'Redux tool kit was used to handle state for user information, all comedians &specials.',
+      },
     ],
   },
 
@@ -250,8 +282,8 @@ const PROJECTS: IProject[] = [
     },
     techIcons: ['javascript', 'css', 'html'],
     screenshots: [
-      { url: etchASketchEmpty, alt: 'Etch-A-Sketch Empty Screenshot' },
       { url: etchASketchDrawing, alt: 'Etch-A-Sketch Drawing Screenshot' },
+      { url: etchASketchEmpty, alt: 'Etch-A-Sketch Empty Screenshot' },
     ],
   },
 
