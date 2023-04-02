@@ -3,10 +3,10 @@
   max-width: 1080px;
   margin-inline: auto;
   margin-bottom: -1rem;
-  padding: min(10vw, 3rem);
+  padding: min(10vw, 3.5rem);
 
   @media (width < 600px) {
-    padding: 1rem;
+    padding: 1.5rem;
   }
 }
 
@@ -20,9 +20,10 @@
 }
 
 [data-tooltip] {
+  --tooltip-gap: 1rem;
+
   position: relative;
   cursor: pointer;
-  --tooltip-gap: 0.5rem;
 
   color: var(--clr-primary-100);
   font-weight: bold;
@@ -30,7 +31,7 @@
   &::after {
     content: attr(data-tooltip);
     position: absolute;
-    top: calc(100% + var(--tooltip-gap));
+    top: calc(-100% - var(--tooltip-gap));
     left: 50%;
     z-index: 10;
 

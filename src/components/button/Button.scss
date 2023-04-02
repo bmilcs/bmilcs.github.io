@@ -9,6 +9,10 @@
     transform: scale(1.1) rotate(1deg);
   }
 
+  &:focus {
+    outline: var(--a11y-outline);
+  }
+
   &__text-only {
     background: none;
     text-align: left;
