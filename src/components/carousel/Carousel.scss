@@ -1,0 +1,75 @@
+.project__carousel {
+  max-width: 100%;
+  min-height: 300px;
+  height: 100%;
+
+  button {
+    z-index: 0;
+
+    &:focus {
+      outline: var(--a11y-outline);
+    }
+  }
+
+  &-images {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    overflow-x: hidden;
+    scroll-snap-type: x mandatory;
+
+    background: none;
+    border: 0;
+
+    cursor: pointer;
+
+    img {
+      scroll-snap-align: start;
+      object-fit: cover;
+
+      filter: grayscale(20%);
+      opacity: 1;
+      transition: transform 0.3s ease-in-out;
+
+      &:hover {
+        filter: grayscale(0%);
+        opacity: 1;
+      }
+    }
+  }
+
+  &-bottom-buttons {
+    --button-size: 0.85rem;
+
+    margin-top: 1rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    grid-template-columns: repeat(auto-fit, minmax(var(--button-size), 1fr));
+    gap: 1rem;
+
+    button {
+      height: var(--button-size);
+      aspect-ratio: 1/1;
+      border-radius: 100vh;
+
+      cursor: pointer;
+
+      border: 0;
+      outline: 0;
+      background: var(--clr-neutral-700);
+
+      transition: transform var(--transition-short) ease-in-out;
+
+      &.currentImage {
+        background: var(--clr-primary-100);
+      }
+
+      &:hover {
+        transform: scale(1.25);
+      }
+    }
+  }
+}
