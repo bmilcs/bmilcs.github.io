@@ -46,6 +46,7 @@ export interface IProject {
   techIcons: TTech[];
   screenshots: TScreenshot[];
   description?: { type: 'header' | 'p'; value: string }[];
+  bulletPoints?: string[];
 }
 
 export type TScreenshot = {
@@ -75,7 +76,7 @@ const PROJECTS: IProject[] = [
       live: 'https://comedy.bmilcs.com',
       repo: 'https://github.com/bmilcs/odin-javascript-final-project',
     },
-    techIcons: ['react', 'redux', 'typescript', 'sass', 'firebase', 'node'],
+    techIcons: ['react', 'redux', 'typescript', 'sass', 'firebase', 'node', 'eslint'],
     screenshots: [
       { url: comedyDbDesktopHome, alt: 'The Comedy DB Desktop Home Screenshot' },
       { url: comedyDbDesktopSpecial, alt: 'The Comedy DB Desktop Special Screenshot' },
@@ -109,6 +110,7 @@ const PROJECTS: IProject[] = [
           'Redux tool kit was used to handle state for user information, all comedians &specials.',
       },
     ],
+    bulletPoints: ['react-router-dom', 'react-icons', 'react-router-dom', 'vite'],
   },
 
   {
@@ -123,6 +125,20 @@ const PROJECTS: IProject[] = [
       { url: waldoGameplay, alt: 'Wheres Waldo Gameplay Screenshot' },
       { url: waldoVictory, alt: 'Wheres Waldo Victory Screenshot' },
     ],
+    description: [
+      { type: 'header', value: 'A Photo Tagging Desktop App' },
+      {
+        type: 'p',
+        value:
+          'This project has a lot of moving parts: React, TypeScript, Redux Tool Kit & SASS on the frontend and Firebase Firestore & Cloud Functions on the backend. Level & character data is loaded from constant arrays of objects for the home page, stored in Redux slices when a level is launched and is tied to the DOM with React. The scoreboard & character locations for each level are stored in Firebase Firestore, a NoSQL-based database. During gameplay, users select coordinates on a large image and character locations are validated with async function calls to Firebase Cloud Functions.',
+      },
+      {
+        type: 'p',
+        value:
+          'After completing a level, users are able to add their name to the leaderboard with a form and are presented with a list of the top scores for that level.',
+      },
+    ],
+    bulletPoints: ['custom hooks', 'high order components', 'bem naming', 'asynchronous'],
   },
 
   {
@@ -137,6 +153,19 @@ const PROJECTS: IProject[] = [
       { url: shoppingCartShopping, alt: 'Shopping Cart Shopping Screenshot' },
       { url: shoppingCartCart, alt: 'Shopping Cart Cart Screenshot' },
     ],
+    description: [
+      { type: 'header', value: 'api based e-commerce site' },
+      {
+        type: 'p',
+        value:
+          'My Shopping Cart React App utilizes localStorage caching, asynchronous JavaScript & the Fake Store Api for all product data. Client side routing is provided by React Router DOM and tests are written with Jest.',
+      },
+      {
+        type: 'p',
+        value:
+          'The page is fully responsive with the help of media queries and is accessible through a custom domain with HTTPS.',
+      },
+    ],
   },
 
   {
@@ -147,6 +176,19 @@ const PROJECTS: IProject[] = [
     },
     techIcons: ['react', 'javascript', 'sass'],
     screenshots: [{ url: memoryCardGame, alt: 'Memory Card Screenshot' }],
+    description: [
+      { type: 'header', value: 'react card game' },
+      {
+        type: 'p',
+        value:
+          'My Memory Game is a React App in which users try to pick all cards exactly once. Each time a card is chosen, the deck is shuffled.',
+      },
+      {
+        type: 'p',
+        value:
+          'Functional components, useState & useEffect were the focus of this project. Shuffling is accomplished with the Fisher-Yates shuffle algorithm. It is fully responsive with the use of media queries, variable font sizes & grid template areas.',
+      },
+    ],
   },
 
   {
@@ -157,6 +199,19 @@ const PROJECTS: IProject[] = [
     },
     techIcons: ['react', 'javascript', 'css'],
     screenshots: [{ url: cvApp, alt: 'Memory Card Screenshot' }],
+    description: [
+      { type: 'header', value: 'Curriculum Vitae React App' },
+      {
+        type: 'p',
+        value:
+          'My CV App was my initial introduction to React. As users enter data to input fields, a preview of the application is updated dynamically using the onChange & value attributes. This project was written with class components and then refactored with functional components.',
+      },
+      {
+        type: 'p',
+        value:
+          'Props, state & Git feature branches were the focus of this app and it is fully responsive.',
+      },
+    ],
   },
 
   {
@@ -165,13 +220,26 @@ const PROJECTS: IProject[] = [
       live: 'https://bmilcs.com/odin-battleship/',
       repo: 'https://github.com/bmilcs/odin-battleship/',
     },
-    techIcons: ['javascript', 'css', 'jest', 'webpack', 'babel', 'eslint'],
+    techIcons: ['javascript', 'sass', 'jest', 'webpack', 'babel', 'eslint'],
     screenshots: [
       { url: battleshipHome, alt: 'Battleship Home Screenshot' },
       { url: battleshipMenu, alt: 'Battleship Menu Screenshot' },
       { url: battleshipGameplay, alt: 'Battleship Gameplay Screenshot' },
       { url: battleshipGameplay2, alt: 'Battleship Gameplay Screenshot' },
       { url: battleshipVictory, alt: 'Battleship Victory Screenshot' },
+    ],
+    description: [
+      { type: 'header', value: 'vanilla javascript board game' },
+      {
+        type: 'p',
+        value:
+          'Using pure JavaScript, this project was blast to create and features test driven development with Jest, recursion, stacks & factories.',
+      },
+      {
+        type: 'p',
+        value:
+          'The Single Responsibility principle played a large role and allowed me to piece together "artificial intelligence" in a short period of time. Custom utility modules, containerize & makeElement, were used to simplify DOM manipulation.',
+      },
     ],
   },
 
@@ -183,6 +251,19 @@ const PROJECTS: IProject[] = [
     },
     techIcons: ['javascript', 'sass', 'webpack', 'eslint'],
     screenshots: [{ url: weatherApp, alt: 'Weather App Screenshot' }],
+    description: [
+      { type: 'header', value: 'api & asynchronous javascript' },
+      {
+        type: 'p',
+        value:
+          'Promises and the fetch API were the focus of this project. Utilizing openweathermap.org, this app accepts a zip code and displays the current weather for that location.',
+      },
+      {
+        type: 'p',
+        value:
+          'SOLID design principles were used to break the logic down into modules. A custom error message is displayed when a zip code cannot be found. Custom utility modules, containerize & makeElement, were used to simplify DOM manipulation.',
+      },
+    ],
   },
 
   {
@@ -193,6 +274,19 @@ const PROJECTS: IProject[] = [
     },
     techIcons: ['javascript', 'sass', 'webpack'],
     screenshots: [{ url: todoList, alt: 'Todo List Screenshot' }],
+    description: [
+      { type: 'header', value: 'yet another todo app' },
+      {
+        type: 'p',
+        value:
+          'SOLID design principles & vanilla JavaScript were used to create this simple Todo List. Some of the notable JavaScript fundamentals used include nested objects & arrays, array methods (reduce, map, filter, some), localStorage and Object.assign.',
+      },
+      {
+        type: 'p',
+        value:
+          'Local storage strips away constructors & methods from objects, which required reassembly on loading. A split Webpack config was used for dev & production modes. Firebase Firestore and authentication were added at a later date for persistent storage. Custom utility modules, containerize & makeElement, were used to simplify DOM manipulation.',
+      },
+    ],
   },
 
   {
@@ -206,6 +300,18 @@ const PROJECTS: IProject[] = [
       { url: restaurantHome, alt: 'Restaurant Page Home Screenshot' },
       { url: restaurantMenu, alt: 'Restaurant Page Menu Screenshot' },
       { url: restaurantContact, alt: 'Restaurant Page Contact Screenshot' },
+    ],
+    description: [
+      { type: 'header', value: 'single page restaurant app' },
+      {
+        type: 'p',
+        value:
+          'NPM, Webpack and ES6 modules were the focus of this project. Inline source maps, dev server, sass-loader and asset management were used.',
+      },
+      {
+        type: 'p',
+        value: 'SASS was using for styling and the design turned out to be one of my better ones.',
+      },
     ],
   },
 
@@ -222,6 +328,19 @@ const PROJECTS: IProject[] = [
       { url: ticTacToeGameplay, alt: 'TicTacToe Gameplay Screenshot' },
       { url: ticTacToeVictory, alt: 'TicTacToe Victory Screenshot' },
     ],
+    description: [
+      { type: 'header', value: 'animated javascript game' },
+      {
+        type: 'p',
+        value:
+          'Module design pattern, factory functions, and keeping the global namespace tidy with scope and closures were the focus of this vanilla JavaScript app.',
+      },
+      {
+        type: 'p',
+        value:
+          'The transitionend event & once: true option for event handlers played a large role in the animations.',
+      },
+    ],
   },
 
   {
@@ -235,6 +354,18 @@ const PROJECTS: IProject[] = [
       { url: libraryHome, alt: 'Library Home Screenshot' },
       { url: libraryEdit, alt: 'Library Edit Screenshot' },
       { url: libraryAdd, alt: 'Library Add Screenshot' },
+    ],
+    description: [
+      { type: 'header', value: 'Book Progress Tracker' },
+      {
+        type: 'p',
+        value:
+          'Object Constructor Design Pattern, prototypes and classes were the focus of this responsive vanilla JavaScript app. UI/UX was implemented with subtle hover animations and multiple input methods: buttons, escape key, double clicking on cards, and clicking outside of the modal.',
+      },
+      {
+        type: 'p',
+        value: '',
+      },
     ],
   },
 

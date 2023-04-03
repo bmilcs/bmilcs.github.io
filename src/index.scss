@@ -21,6 +21,7 @@
   --clr-neutral-200: hsla(0, 0%, 93%, 1);
   --clr-neutral-100: hsla(0, 0%, 97%, 1);
   --clr-neutral-100-t: hsla(0, 0%, 97%, 0.5);
+  --clr-primary-100-t: hsl(212, 65%, 56%, 0.5);
   --clr-primary-100: hsl(212, 65%, 56%, 1);
   --clr-primary-200: hsl(212, 65%, 66%, 1);
   --clr-accent-100: hsl(56, 91%, 47%);
@@ -31,7 +32,7 @@
   --box-shadow-900: 0px 18px 18px var(--clr-neutral-900);
   --box-shadow-900-inner: inset 0px 0px 69px 11px var(--clr-neutral-100);
 
-  --a11y-outline: 2px solid var(--clr-primary-100);
+  --a11y-outline: 3px solid var(--clr-primary-100-t);
 
   --border-radius-100: 4px;
   --border-radius-200: 8px;

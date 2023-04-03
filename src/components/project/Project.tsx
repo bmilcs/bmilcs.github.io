@@ -30,7 +30,7 @@ function Project({ data, number }: TProps) {
       <div className='project__header'>
         <div className='project__header-text'>
           <h3 className='project__title' data-project-number={paddedNumber}>
-            {data.title}
+            <a href={data.links.live}>{data.title}</a>
           </h3>
 
           <div className='project__links'>
