@@ -306,7 +306,7 @@ const PROJECTS: IProject[] = [
       },
       {
         type: 'p',
-        value: 'SASS was using for styling and the design turned out to be one of my better ones.',
+        value: 'SASS was used for styling and the design turned out to be one of my better ones.',
       },
     ],
   },
