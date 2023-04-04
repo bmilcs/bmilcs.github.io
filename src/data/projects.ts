@@ -11,8 +11,6 @@ import comedyDbDesktopSpecial from '../assets/comedy/desktop_special.png';
 import cvApp from '../assets/cv/screenshot.png';
 import etchASketchDrawing from '../assets/etch_a_sketch/drawing.png';
 import etchASketchEmpty from '../assets/etch_a_sketch/empty.png';
-import landingPageBottom from '../assets/landing_page/bottom.png';
-import landingPageTop from '../assets/landing_page/top.png';
 import libraryAdd from '../assets/library/add.png';
 import libraryEdit from '../assets/library/edit.png';
 import libraryHome from '../assets/library/home.png';
@@ -20,8 +18,6 @@ import memoryCardGame from '../assets/memory_card/screenshot.png';
 import restaurantContact from '../assets/restaurant/contact.png';
 import restaurantHome from '../assets/restaurant/home.png';
 import restaurantMenu from '../assets/restaurant/menu.png';
-import rockPaperScissorsGameplay from '../assets/rock_paper_scissors/gameplay-1.png';
-import rockPaperScissorsGameplay2 from '../assets/rock_paper_scissors/gameplay-2.png';
 import shoppingCartCart from '../assets/shopping_cart/desktop-cart.png';
 import shoppingCartHome from '../assets/shopping_cart/desktop-home.png';
 import shoppingCartShopping from '../assets/shopping_cart/desktop-shop.png';
@@ -375,8 +371,21 @@ const PROJECTS: IProject[] = [
       live: 'https://bmilcs.com/odin-admin-dashboard/',
       repo: 'https://github.com/bmilcs/odin-admin-dashboard',
     },
-    techIcons: ['css', 'html'],
+    techIcons: ['sass', 'html'],
     screenshots: [{ url: adminDashboard, alt: 'Admin Dashboard Screenshot' }],
+    description: [
+      { type: 'header', value: 'Frontend Mentor-like Assignment' },
+      {
+        type: 'p',
+        value:
+          'Responsive design without the use of media queries, CSS Grid and the all powerful repeat(auto-fit, minmax()) were the focus of this project.',
+      },
+      {
+        type: 'p',
+        value:
+          'Git fundamentals & semantic HTML elements were also covered: section, nav, aside, main, header & article.',
+      },
+    ],
   },
 
   {
@@ -389,6 +398,18 @@ const PROJECTS: IProject[] = [
     screenshots: [
       { url: signupFormEmpty, alt: 'Signup Form Empty Screenshot' },
       { url: signupFormValidation, alt: 'Signup Form Validation Screenshot' },
+    ],
+    description: [
+      { type: 'header', value: 'Form Validation via HTML & JavaScript' },
+      {
+        type: 'p',
+        value:
+          'Form validation was the focus of this project. After submitting the form for the first time, custom visual indicators appear  alerting the user of fields that need correction. Users continue to receive live feedback as they make the changes.',
+      },
+      {
+        type: 'p',
+        value: '',
+      },
     ],
   },
 
@@ -403,6 +424,14 @@ const PROJECTS: IProject[] = [
       { url: calculatorEmpty, alt: 'Calculator Empty Screenshot' },
       { url: calculatorCalculations, alt: 'Calculator With Calculations Screenshot' },
     ],
+    description: [
+      { type: 'header', value: 'JavaScript Calculator' },
+      {
+        type: 'p',
+        value:
+          'HTML, CSS, JavaScript & Git fundamentals were the focus of this project. Topics covered include objects, arrays, methods, constructors and switches. ',
+      },
+    ],
   },
 
   {
@@ -416,31 +445,13 @@ const PROJECTS: IProject[] = [
       { url: etchASketchDrawing, alt: 'Etch-A-Sketch Drawing Screenshot' },
       { url: etchASketchEmpty, alt: 'Etch-A-Sketch Empty Screenshot' },
     ],
-  },
-
-  {
-    title: 'rock paper scissors',
-    links: {
-      live: 'https://bmilcs.com/odin-rock-paper-scissors/',
-      repo: 'https://github.com/bmilcs',
-    },
-    techIcons: ['javascript', 'css', 'html'],
-    screenshots: [
-      { url: rockPaperScissorsGameplay, alt: 'Rock Paper Scissors Gameplay Screenshot' },
-      { url: rockPaperScissorsGameplay2, alt: 'Rock Paper Scissors Gameplay Screenshot' },
-    ],
-  },
-
-  {
-    title: 'landing page',
-    links: {
-      live: 'https://bmilcs.com/odin-landing-page/',
-      repo: 'https://github.com/bmilcs/odin-landing-page',
-    },
-    techIcons: ['css', 'html'],
-    screenshots: [
-      { url: landingPageTop, alt: 'Landing Page Top Screenshot' },
-      { url: landingPageBottom, alt: 'Landing Page Bottom Screenshot' },
+    description: [
+      { type: 'header', value: 'Enhanced Drawing App' },
+      {
+        type: 'p',
+        value:
+          'Etch-A-Sketch+ was created using HTML, CSS & JavaScript. Topics covered include hex & rgb color conversions, draw & erase modes and incremental shading with multiple passes over the same cell.',
+      },
     ],
   },
 ];
