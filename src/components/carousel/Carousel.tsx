@@ -8,22 +8,25 @@ type TProps = {
 };
 
 function Carousel({ imageArray }: TProps) {
-  const [currentImage, setCurrentImage] = useState(0);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const carouselRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     const carousel = carouselRef.current;
     if (carousel === null) return;
 
-    const carouselViewport = carousel.offsetWidth;
-    const targetX = carouselViewport * currentImage;
+    const carouselViewportWidth = carousel.offsetWidth;
+    const targetXPosition = carouselViewportWidth * currentImageIndex;
 
-    carousel.scroll({ left: targetX, behavior: 'smooth' });
-  }, [currentImage]);
+    carousel.scroll({ left: targetXPosition, behavior: 'smooth' });
+  }, [currentImageIndex]);
 
   const cycleImage = () => {
-    setCurrentImage((prev) => {
-      return prev === imageArray.length - 1 ? 0 : prev + 1;
+    setCurrentImageIndex((prev) => {
+      const onLastImage = prev === imageArray.length - 1;
+      const firstImage = 0;
+      const nextImage = prev + 1;
+      return onLastImage ? firstImage : nextImage;
     });
   };
 
@@ -40,11 +43,11 @@ function Carousel({ imageArray }: TProps) {
           imageArray.map(({ url, alt }, idx) => {
             return (
               <button
-                className={`${currentImage === idx ? 'currentImage' : ''}`}
+                className={`${currentImageIndex === idx ? 'currentImage' : ''}`}
                 key={url}
                 aria-label={`View ${alt}`}
                 onClick={() => {
-                  setCurrentImage(idx);
+                  setCurrentImageIndex(idx);
                 }}
               ></button>
             );
