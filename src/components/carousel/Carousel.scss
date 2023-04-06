@@ -5,10 +5,6 @@
 
   button {
     z-index: 0;
-
-    &:focus {
-      outline: var(--a11y-outline);
-    }
   }
 
   &-images {
