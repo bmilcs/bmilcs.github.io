@@ -1,4 +1,11 @@
 import adminDashboard from '../assets/admin_dashboard/screenshot.png';
+import kashetaFarmsHome from '../assets/ancient_history/kasha-farms-01.png';
+import cavityHome from '../assets/ancient_history/local-bands/cavity-v3.0-home.jpg';
+import liarcHome from '../assets/ancient_history/local-bands/liarc-v1.0-home.jpg';
+import malachiConstant from '../assets/ancient_history/local-bands/malachi.constant-v1.0.main.jpg';
+import malachiConstant2 from '../assets/ancient_history/local-bands/malachi.constant-v2.0.main.jpg';
+import nohoPetsittersContact from '../assets/ancient_history/noho_petsitters-contact.png';
+import nohoPetsittersHome from '../assets/ancient_history/noho_petsitters-home.png';
 import battleshipGameplay from '../assets/battleship/gameplay-1.png';
 import battleshipGameplay2 from '../assets/battleship/gameplay-2.png';
 import battleshipHome from '../assets/battleship/home.png';
@@ -10,7 +17,6 @@ import comedyDbDesktopHome from '../assets/comedy/desktop_home.png';
 import comedyDbDesktopSpecial from '../assets/comedy/desktop_special.png';
 import cvApp from '../assets/cv/screenshot.png';
 import etchASketchDrawing from '../assets/etch_a_sketch/drawing.png';
-import etchASketchEmpty from '../assets/etch_a_sketch/empty.png';
 import libraryAdd from '../assets/library/add.png';
 import libraryEdit from '../assets/library/edit.png';
 import libraryHome from '../assets/library/home.png';
@@ -35,7 +41,7 @@ import weatherApp from '../assets/weather/screenshot.png';
 
 export interface IProject {
   title: string;
-  links: {
+  links?: {
     live: string;
     repo: string;
   };
@@ -93,7 +99,7 @@ const PROJECTS: IProject[] = [
       {
         type: 'p',
         value:
-          'Powered by TMDB, Firebase Firestore & Cloud Functions running on Node v18, I created pubsub functions that fetch the latest specials for all comedians in the database. When users sign up and favorite a comedian, they receive e-mail notifications (via node-mailer) & GUI notifications (via database entries) whenever that comedian releases a new special. ',
+          'Powered by TMDB, Firebase Firestore & Cloud Functions running on Node v18, I created pubsub functions that fetch the latest specials for all comedians in the database on a 12 hour interval. When users sign up and favorite a comedian, they receive e-mail notifications (via node-mailer) & GUI notifications (via database entries) whenever that comedian releases a new special. ',
       },
       {
         type: 'p',
@@ -103,7 +109,7 @@ const PROJECTS: IProject[] = [
       {
         type: 'p',
         value:
-          'Redux tool kit was used to handle state for user information, all comedians &specials.',
+          'Redux tool kit was used to handle state for user information, all comedians & specials.',
       },
     ],
     bulletPoints: ['react-router-dom', 'react-icons', 'react-router-dom', 'vite'],
@@ -441,16 +447,44 @@ const PROJECTS: IProject[] = [
       repo: 'https://github.com/bmilcs/odin-etch-a-sketch',
     },
     techIcons: ['javascript', 'css', 'html'],
-    screenshots: [
-      { url: etchASketchDrawing, alt: 'Etch-A-Sketch Drawing Screenshot' },
-      { url: etchASketchEmpty, alt: 'Etch-A-Sketch Empty Screenshot' },
-    ],
+    screenshots: [{ url: etchASketchDrawing, alt: 'Etch-A-Sketch Drawing Screenshot' }],
     description: [
       { type: 'header', value: 'Enhanced Drawing App' },
       {
         type: 'p',
         value:
           'Etch-A-Sketch+ was created using HTML, CSS & JavaScript. Topics covered include hex & rgb color conversions, draw & erase modes and incremental shading with multiple passes over the same cell.',
+      },
+    ],
+  },
+
+  {
+    title: 'Early 2000 Clients',
+    techIcons: ['javascript', 'css', 'html'],
+    screenshots: [
+      { url: nohoPetsittersHome, alt: 'NoHo Petsitters Home' },
+      { url: nohoPetsittersContact, alt: 'NoHo Petsitters Contact' },
+      { url: kashetaFarmsHome, alt: 'Kasheta Farms Home' },
+      { url: cavityHome, alt: 'Cavity Band Page Home' },
+      { url: liarcHome, alt: 'Lost Inside A Rubix Cube Band Page Home' },
+      { url: malachiConstant, alt: 'Malachi Constant Band Page Home' },
+      { url: malachiConstant2, alt: 'Malachi Constant Band Page Home' },
+    ],
+    description: [
+      { type: 'header', value: 'Local Bands & Businesses' },
+      {
+        type: 'p',
+        value:
+          'My web development experience dates back to 2001 as a freshman in high school. I was responsible for 5 local band web sites. These projects were created with Adobe Photoshop, HTML, CSS and JavaScript.',
+      },
+      {
+        type: 'p',
+        value:
+          'After high school, I took on a few paying clients, including a pet sitting business and local farm.',
+      },
+      {
+        type: 'p',
+        value: 'Fun Fact: These projects have persisted over time via physical backups.',
       },
     ],
   },
