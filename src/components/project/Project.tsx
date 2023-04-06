@@ -29,13 +29,21 @@ function Project({ data, number }: TProps) {
     <article className='project'>
       <div className='project__header'>
         <div className='project__header-text'>
-          <h3 className='project__title' data-project-number={paddedNumber}>
-            <a href={data.links.live}>{data.title}</a>
-          </h3>
+          {data.links ? (
+            <>
+              <h3 className='project__title' data-project-number={paddedNumber}>
+                <a href={data.links.live}>{data.title}</a>
+              </h3>
 
-          <div className='project__links'>
-            <a href={data.links.live}>LIVE</a> | <a href={data.links.repo}>CODE</a>
-          </div>
+              <div className='project__links'>
+                <a href={data.links.live}>LIVE</a> | <a href={data.links.repo}>CODE</a>
+              </div>
+            </>
+          ) : (
+            <h3 className='project__title' data-project-number={paddedNumber}>
+              {data.title}
+            </h3>
+          )}
         </div>
 
         <div className='project__dev-icons'>
@@ -130,8 +138,6 @@ function Project({ data, number }: TProps) {
           <Carousel imageArray={data.screenshots} />
         </div>
       </div>
-
-      <hr className='project__divider' />
     </article>
   );
 }
