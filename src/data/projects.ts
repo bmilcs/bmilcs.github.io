@@ -462,13 +462,13 @@ const PROJECTS: IProject[] = [
     title: 'Early 2000 Clients',
     techIcons: ['javascript', 'css', 'html'],
     screenshots: [
+      { url: malachiConstant2, alt: 'Malachi Constant Band Page Home' },
+      { url: malachiConstant, alt: 'Malachi Constant Band Page Home' },
+      { url: liarcHome, alt: 'Lost Inside A Rubix Cube Band Page Home' },
+      { url: cavityHome, alt: 'Cavity Band Page Home' },
+      { url: kashetaFarmsHome, alt: 'Kasheta Farms Home' },
       { url: nohoPetsittersHome, alt: 'NoHo Petsitters Home' },
       { url: nohoPetsittersContact, alt: 'NoHo Petsitters Contact' },
-      { url: kashetaFarmsHome, alt: 'Kasheta Farms Home' },
-      { url: cavityHome, alt: 'Cavity Band Page Home' },
-      { url: liarcHome, alt: 'Lost Inside A Rubix Cube Band Page Home' },
-      { url: malachiConstant, alt: 'Malachi Constant Band Page Home' },
-      { url: malachiConstant2, alt: 'Malachi Constant Band Page Home' },
     ],
     description: [
       { type: 'header', value: 'Local Bands & Businesses' },
