@@ -8,4 +8,30 @@
 
   background: var(--clr-portfolio-bg);
   color: var(--clr-neutral-200);
+
+  &__note {
+    color: var(--clr-neutral-500);
+    justify-self: start;
+    margin-bottom: 2rem;
+  }
+}
+
+.custom-shape-divider-bottom-1680726704 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-bottom-1680726704 svg {
+  position: relative;
+  display: block;
+  width: calc(177% + 1.3px);
+  height: 63px;
+}
+
+.custom-shape-divider-bottom-1680726704 .shape-fill {
+  fill: var(--clr-about-bg);
 }
