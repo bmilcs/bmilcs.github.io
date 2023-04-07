@@ -1,9 +1,9 @@
 .column {
   width: 100%;
-  max-width: 1080px;
+  max-width: 1280px;
   margin-inline: auto;
   margin-bottom: -1rem;
-  padding: min(10vw, 3.5rem);
+  padding-inline: min(10vw, 3.5rem);
 
   @media (width < 600px) {
     padding: 1.5rem;

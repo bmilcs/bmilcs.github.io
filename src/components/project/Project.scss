@@ -1,6 +1,14 @@
 .project {
+  --title-gap: 2.5vh;
+  --header-gap: 3vh;
+  --p-gap: 3vh;
+
   position: relative;
   color: var(--clr-neutral-300);
+
+  @media (width > 850px) {
+    padding-block: var(--p-gap);
+  }
 
   &__header {
     z-index: 1;
@@ -11,14 +19,11 @@
     padding-block: 1rem;
 
     background: var(--clr-portfolio-bg);
-    border-bottom: 1px dashed var(--clr-neutral-700);
+    border-bottom: 1px dashed var(--clr-neutral-800);
 
     @media (width < 850px) {
       display: block;
-
-      > * {
-        margin-bottom: 1.5rem;
-      }
+      border: 0;
     }
   }
 
@@ -65,7 +70,8 @@
 
       @media (width < 850px) {
         left: 50%;
-        top: calc(-100% - var(--line-thickness) * 2.5);
+        // top: calc(-100% - var(--line-thickness) * 2.5);
+        top: -100%;
         width: max-content;
         transform: rotate(0) translateX(-50%);
       }
@@ -89,6 +95,7 @@
     @media (width < 850px) {
       > * {
         width: 24px;
+        margin-top: var(--title-gap);
       }
 
       // tooltips extend beyond viewport on small screens
@@ -104,16 +111,14 @@
   }
 
   &__content {
-    --title-gap: 2.5vh;
-    --header-gap: 3vh;
-    --p-gap: 3vh;
-
+    // grid is used to change order of carousel/text
     display: grid;
-    grid-template-rows: repeat(2, max-content);
+    grid-template-columns: 1fr;
     margin-block: var(--title-gap);
-    gap: 3rem;
 
     @media (width > 850px) {
+      gap: 3rem;
+      display: grid;
       grid-template-columns: 1fr 1fr;
     }
   }
@@ -134,6 +139,10 @@
       line-height: 1.5;
       color: var(--clr-neutral-300);
     }
+
+    @media (width < 850px) {
+      margin-top: calc(1.5 * var(--title-gap));
+    }
   }
 
   &__screenshots {
@@ -141,7 +150,7 @@
     height: 100%;
 
     img {
-      border-radius: var(--border-radius-400);
+      border-radius: var(--border-radius-200);
     }
 
     @media (width <850px) {
@@ -150,8 +159,8 @@
   }
 
   @media (width < 850px) {
-    display: grid;
-    justify-content: center;
+    &__header {
+    }
 
     &__title,
     &__links,

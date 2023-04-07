@@ -52,9 +52,9 @@ function Carousel({ imageArray }: TProps) {
   };
 
   return (
-    <div className='project__carousel'>
+    <div className='carousel'>
       <button
-        className='project__carousel-images'
+        className='carousel__images'
         ref={carouselRef}
         onClick={() => cycleImage()}
         onScroll={(e) => {
@@ -68,21 +68,24 @@ function Carousel({ imageArray }: TProps) {
         })}
       </button>
 
-      <div className='project__carousel-bottom-buttons'>
-        {imageArray.length > 1 &&
-          imageArray.map(({ url, alt }, idx) => {
+      {imageArray.length > 1 && (
+        <div className='carousel__bottom-buttons'>
+          {imageArray.map(({ url, alt }, idx) => {
             return (
               <button
-                className={`${currentImageIndex === idx ? 'currentImage' : ''}`}
+                className={`carousel__bottom-button ${
+                  currentImageIndex === idx ? 'currentImage' : ''
+                }`}
                 key={url}
-                aria-label={`View ${alt}`}
+                aria-label={`View ${alt} Image`}
                 onClick={() => {
                   setCurrentImageIndex(idx);
                 }}
               ></button>
             );
           })}
-      </div>
+        </div>
+      )}
     </div>
   );
 }
