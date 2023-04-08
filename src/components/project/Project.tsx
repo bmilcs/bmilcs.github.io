@@ -32,11 +32,19 @@ function Project({ data, number }: TProps) {
           {data.links ? (
             <>
               <h3 className='project__title' data-project-number={paddedNumber}>
-                <a href={data.links.live}>{data.title}</a>
+                <a href={data.links.live} target='_blank' rel='noreferrer'>
+                  {data.title}
+                </a>
               </h3>
 
               <div className='project__links'>
-                <a href={data.links.live}>LIVE</a> | <a href={data.links.repo}>CODE</a>
+                <a href={data.links.live} target='_blank' rel='noreferrer'>
+                  LIVE
+                </a>{' '}
+                |{' '}
+                <a href={data.links.repo} target='_blank' rel='noreferrer'>
+                  CODE
+                </a>
               </div>
             </>
           ) : (

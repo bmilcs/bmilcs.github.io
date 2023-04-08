@@ -1,12 +1,18 @@
 .about {
   color: var(--clr-neutral-900);
-
   background-color: var(--clr-about-bg);
+  padding-top: var(--section-vertical-padding);
+  padding-bottom: calc(var(--section-vertical-padding) * 1.5);
 
   &__content {
     display: grid;
     gap: 2rem;
     margin-bottom: 2rem;
+
+    h2 {
+      text-transform: uppercase;
+      font-size: 2rem;
+    }
 
     p {
       line-height: 1.5;

@@ -4,8 +4,8 @@
   display: grid;
   place-items: center;
 
-  padding-top: 5vh;
-  padding-bottom: 10vh;
+  padding-top: var(--section-vertical-padding);
+  padding-bottom: calc(var(--section-vertical-padding) * 2);
 
   background: var(--clr-portfolio-bg);
   color: var(--clr-neutral-200);

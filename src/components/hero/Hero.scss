@@ -33,14 +33,17 @@
         &:before {
           content: '';
           position: absolute;
-          height: min(1.5vw, 12px);
-          background-color: var(--clr-primary-100);
-          width: 75%;
+
           bottom: max(calc(-4px - 1.2vw), -16px);
-          // bottom: -14px;
           right: 12.5%;
-          transform: rotate(-2deg) skew(20deg);
-          border-radius: 100vh;
+
+          height: min(1.5vw, 12px);
+          width: 75%;
+
+          background-color: var(--clr-primary-100);
+
+          transform: rotate(-2deg) skew(-5deg);
+          animation: pulseScale 1s infinite ease-in-out;
         }
       }
     }
@@ -79,5 +82,19 @@
 
   100% {
     opacity: 1;
+  }
+}
+
+@keyframes pulseScale {
+  0% {
+    transform: scale(1) rotate(-2deg) skew(-5deg);
+  }
+
+  50% {
+    transform: scale(1.045) rotate(-2deg) skew(-5deg);
+  }
+
+  100% {
+    transform: scale(1) rotate(-2deg) skew(-5deg);
   }
 }

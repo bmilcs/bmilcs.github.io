@@ -3,14 +3,15 @@ import './About.scss';
 function About() {
   return (
     <section className='about' id='about'>
-      <div className='column full_height centered_grid'>
+      <div className='column centered_grid'>
         <div className='about__content'>
           <h2>About Me</h2>
           <p>
             Hi! My name is Bryan and I love building things both on and offline. My interest in
             programming began in elementary school: kicking America Online users offline with Visual
             Basic. In high school, Adobe Photoshop, HTML & CSS caught my interest. Before long, I
-            was responsible for 5 local band web sites and eventually took on a few small clients.
+            was responsible for 5 local band web sites and eventually took on a few small paying
+            clients.
           </p>
 
           <p>
