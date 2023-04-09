@@ -61,6 +61,20 @@
   }
 }
 
+@keyframes pulseScale {
+  0% {
+    transform: scale(1) rotate(-2deg) skew(-5deg);
+  }
+
+  50% {
+    transform: scale(1.045) rotate(-2deg) skew(-5deg);
+  }
+
+  100% {
+    transform: scale(1) rotate(-2deg) skew(-5deg);
+  }
+}
+
 .App {
   position: relative;
   display: grid;
