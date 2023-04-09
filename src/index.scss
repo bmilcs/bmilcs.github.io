@@ -146,3 +146,23 @@ label,
 textarea {
   font-size: var(--fs-responsive-baseline);
 }
+
+// custom scroll bar
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* scrollbar track */
+::-webkit-scrollbar-track {
+  background: var(--clr-neutral-800);
+}
+
+/* scrollbar progress */
+::-webkit-scrollbar-thumb {
+  background: var(--clr-neutral-600);
+}
+
+/* scrollbar progress hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--clr-neutral-400);
+}
