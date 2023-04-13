@@ -1,9 +1,6 @@
 .contact {
   --section-separator-height: min(75px, 10vw);
 
-  // background: url('../../assets/blob-haikei.svg') no-repeat;
-  // background-size: cover;
-
   position: relative;
   padding-block: calc(var(--section-separator-height) + var(--section-vertical-padding))
     var(--section-vertical-padding);
@@ -21,6 +18,7 @@
 
   p,
   h2 {
+    color: var(--clr-neutral-200);
     text-align: center;
     margin-bottom: calc(var(--section-vertical-padding) / 16);
   }
@@ -34,12 +32,9 @@
     width: min(100%, 600px);
     padding: min(1.5rem, 10vw);
 
-    background: var(--clr-neutral-300);
-
-    border: 2px solid var(--clr-neutral-400);
-    border-radius: var(--border-radius-200);
-
-    box-shadow: var(--box-shadow-100);
+    // background: #444f68;
+    // border-radius: var(--border-radius-200);
+    // border: 2px solid var(--clr-neutral-800);
 
     .input-wrapper {
       > * {
@@ -52,7 +47,7 @@
     }
 
     label {
-      margin-bottom: 4px;
+      margin-bottom: 0.5rem;
 
       transform: translateX(0.25rem);
 
@@ -67,26 +62,31 @@
 
     input,
     textarea {
-      --border-invalid: 2px solid var(--clr-error);
-      --border-valid: 2px solid var(--clr-success);
-      --border-focus: 2px solid var(--clr-primary-100);
+      --border-thickness: 3px;
+      --border-invalid: var(--border-thickness) solid var(--clr-error);
+      --border-valid: var(--border-thickness) solid var(--clr-success);
+      --border-focus: var(--border-thickness) solid var(--clr-neutral-500);
+      --border-standard: var(--border-thickness) solid var(--clr-neutral-800);
 
       width: 100%;
 
       padding: 0.5rem 0.75rem;
 
-      border: 2px solid var(--clr-neutral-400);
+      outline: var(--border-standard);
+      border: 0;
       border-radius: var(--border-radius-100);
 
-      background: var(--clr-neutral-200);
+      // outline-offset: 4px;
+
+      color: var(--clr-neutral-100);
+      background: var(--clr-neutral-700);
 
       &::placeholder {
         color: var(--clr-neutral-450);
       }
 
       &:focus {
-        outline: none;
-        border: var(--border-focus);
+        outline: var(--border-focus);
 
         + .validation-message {
           color: var(--clr-neutral-500);
@@ -94,11 +94,11 @@
       }
 
       &.invalid:not(:placeholder-shown):not(:focus) {
-        border: var(--border-invalid);
+        outline: var(--border-invalid);
       }
 
       &.valid:not(:placeholder-shown) {
-        border: var(--border-valid);
+        outline: var(--border-valid);
       }
     }
 
@@ -110,10 +110,10 @@
 
     .validation-message {
       margin: 0;
+      margin-top: 8px;
 
       text-align-last: left;
       display: block;
-      margin-top: 0.2rem;
       color: var(--clr-error);
       font-size: 0.9rem;
       transform: translateX(0.25rem);
@@ -134,7 +134,8 @@
 
   button {
     padding: 1rem 1.5rem;
-    margin: auto;
+    margin-inline: auto;
+    margin-top: 0.5rem;
 
     border: 0;
     border-radius: var(--border-radius-100);
