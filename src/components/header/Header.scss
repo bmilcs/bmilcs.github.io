@@ -1,15 +1,16 @@
 header {
-  position: sticky;
-  padding-block: 5vh;
-
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-content: space-between;
   align-items: center;
 
+  padding-block: 2rem;
+
+  animation: fadeInOpacity 1s linear;
+
   nav {
     --padding: 1rem;
-    --link-color: var(--clr-neutral-800);
+    --link-color: var(--clr-header);
 
     ul {
       display: flex;

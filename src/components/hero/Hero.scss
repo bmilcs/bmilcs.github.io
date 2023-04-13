@@ -1,12 +1,35 @@
 .hero {
-  --spacer: 1vh;
+  --spacer: 1.5vh;
   --timer: 1s;
+
+  @media (width < 750px) {
+    --spacer: 1.5vh;
+  }
+
   position: relative;
 
+  color: var(--clr-neutral-200);
+
+  display: grid;
+  grid-template-columns: 1fr;
+  place-items: center;
+
   &__text {
+    transform: translateY(-10vh);
+
     animation: fadeInFromLeft var(--timer) cubic-bezier(0, 1.32, 1, 1) 1 normal forwards;
 
-    transform: translateY(-10vh);
+    h4 {
+      font-family: var(--ff-main);
+      font-weight: var(--fw-thin);
+      font-size: clamp(0.9rem, 2vw, 1.5rem);
+      color: var(--clr-neutral-400);
+      letter-spacing: 2px;
+
+      transform: rotate(-4deg) translateX(-5vw);
+
+      margin-bottom: calc(var(--spacer) * 5);
+    }
 
     // Bryan Miller
     h2 {
@@ -14,7 +37,8 @@
 
       font-weight: var(--fw-xbold);
       font-size: clamp(2.5rem, 8vw, 6rem);
-      color: var(--clr-neutral-800);
+
+      color: var(--clr-neutral-200);
     }
 
     // A Frontend
@@ -48,6 +72,31 @@
       }
     }
   }
+
+  &__cta {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 1rem;
+
+    a {
+      font-family: var(--ff-accent);
+      font-size: 1.5rem;
+    }
+
+    svg {
+      aspect-ratio: 1/1;
+      width: min(7vw, 2.5rem);
+      color: var(--clr-primary-100);
+
+      transition: transform var(--transition-short) ease-in-out;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
 }
 
 .custom-shape-divider-bottom-1680894835 {
@@ -69,18 +118,4 @@
 
 .custom-shape-divider-bottom-1680894835 .shape-fill {
   fill: var(--clr-portfolio-bg);
-}
-
-@keyframes fadeInFromLeft {
-  0% {
-    opacity: 0;
-    transform: translate(-100vw, -10vh);
-  }
-  30% {
-    opacity: 0.1;
-  }
-
-  100% {
-    opacity: 1;
-  }
 }

@@ -1,4 +1,6 @@
 import { useEffect } from 'react';
+import Github from '../../assets/Github';
+import LinkedIn from '../../assets/LinkedIn';
 import Button from '../button/Button';
 import './Hero.scss';
 
@@ -20,15 +22,27 @@ function Hero() {
     <section className='hero'>
       <div className='hero-content column centered_grid full_height'>
         <div className='hero__text'>
-          {/* <p>Hi! Let me introduce myself. My name is... </p> */}
-          <h2>Bryan Miller</h2>
+          <h4>Hey there :)</h4>
+          <h2>I&apos;m Bryan Miller</h2>
           <h3>
             A Frontend <span>Web Developer</span>
           </h3>
-          {/* <p>I love coding, being creative and solving problems. </p> */}
-          <a href='#portfolio'>
-            <Button type='standard'>My Portfolio</Button>
-          </a>
+
+          <div className='hero__cta'>
+            <a href='https://github.com/bmilcs' target='_blank' rel='noreferrer'>
+              <Github />
+            </a>
+            <a
+              href='https://www.linkedin.com/in/bryan-michael-miller/'
+              target='_blank'
+              rel='noreferrer'
+            >
+              <LinkedIn />
+            </a>
+            <a href='#portfolio'>
+              <Button type='outline'>My Portfolio</Button>
+            </a>
+          </div>
         </div>
       </div>
 
