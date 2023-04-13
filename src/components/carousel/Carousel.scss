@@ -1,8 +1,6 @@
 .carousel {
   max-width: 100%;
   height: 100%;
-  display: grid;
-  place-items: center;
 
   button {
     z-index: 0;
@@ -12,6 +10,7 @@
     display: flex;
     gap: 1rem;
     align-items: center;
+    justify-content: start;
 
     overflow-x: hidden;
     scroll-snap-type: x mandatory;
@@ -21,16 +20,7 @@
 
     cursor: pointer;
 
-    filter: grayscale(50%);
-    opacity: 0.75;
-
     transition: opacity 0.3s ease-in-out;
-
-    &:hover,
-    &:focus {
-      filter: grayscale(0%);
-      opacity: 1;
-    }
 
     img {
       scroll-snap-align: start;
