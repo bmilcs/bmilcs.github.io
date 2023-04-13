@@ -1,43 +1,45 @@
-import adminDashboard from '../assets/admin_dashboard/screenshot.png';
-import kashetaFarmsHome from '../assets/ancient_history/kasha-farms-01.png';
-import cavityHome from '../assets/ancient_history/local-bands/cavity-v3.0-home.jpg';
-import liarcHome from '../assets/ancient_history/local-bands/liarc-v1.0-home.jpg';
-import malachiConstant from '../assets/ancient_history/local-bands/malachi.constant-v1.0.main.jpg';
-import malachiConstant2 from '../assets/ancient_history/local-bands/malachi.constant-v2.0.main.jpg';
-import nohoPetsittersContact from '../assets/ancient_history/noho_petsitters-contact.png';
-import nohoPetsittersHome from '../assets/ancient_history/noho_petsitters-home.png';
-import battleshipGameplay from '../assets/battleship/gameplay-1.png';
-import battleshipGameplay2 from '../assets/battleship/gameplay-2.png';
-import battleshipHome from '../assets/battleship/home.png';
-import battleshipMenu from '../assets/battleship/menu.png';
-import battleshipVictory from '../assets/battleship/victory.png';
-import calculatorCalculations from '../assets/calculator/calculations.png';
-import calculatorEmpty from '../assets/calculator/empty.png';
-import comedyDbDesktopHome from '../assets/comedy/desktop_home.png';
-import comedyDbDesktopSpecial from '../assets/comedy/desktop_special.png';
-import cvApp from '../assets/cv/screenshot.png';
-import etchASketchDrawing from '../assets/etch_a_sketch/drawing.png';
-import libraryAdd from '../assets/library/add.png';
-import libraryEdit from '../assets/library/edit.png';
-import libraryHome from '../assets/library/home.png';
-import memoryCardGame from '../assets/memory_card/screenshot.png';
-import restaurantContact from '../assets/restaurant/contact.png';
-import restaurantHome from '../assets/restaurant/home.png';
-import restaurantMenu from '../assets/restaurant/menu.png';
-import shoppingCartCart from '../assets/shopping_cart/desktop-cart.png';
-import shoppingCartHome from '../assets/shopping_cart/desktop-home.png';
-import shoppingCartShopping from '../assets/shopping_cart/desktop-shop.png';
-import signupFormEmpty from '../assets/signup_form/empty.png';
-import signupFormValidation from '../assets/signup_form/validation.png';
-import ticTacToeGameplay from '../assets/tictactoe/gameplay.png';
-import ticTacToeHome from '../assets/tictactoe/home.png';
-import ticTacToeIntro from '../assets/tictactoe/intro.png';
-import ticTacToeVictory from '../assets/tictactoe/victory.png';
-import todoList from '../assets/todo/screenshot.png';
-import waldoGameplay from '../assets/waldo/gameplay-1.png';
-import waldoVictory from '../assets/waldo/gameplay-3.png';
-import waldoHome from '../assets/waldo/home.png';
-import weatherApp from '../assets/weather/screenshot.png';
+import adminDashboard from '../assets/admin_dashboard/screenshot.jpg';
+import cavityHome from '../assets/ancient_history/cavity-v3.0-home.jpg';
+import kashetaFarmsHome from '../assets/ancient_history/kasha-farms-01.jpg';
+import liarcHome from '../assets/ancient_history/liarc-v1.0-home.jpg';
+import malachiConstant from '../assets/ancient_history/malachi.constant-v1.0.main.jpg';
+import malachiConstant2 from '../assets/ancient_history/malachi.constant-v2.0.main.jpg';
+import nohoPetsittersContact from '../assets/ancient_history/noho_petsitters-contact.jpg';
+import nohoPetsittersHome from '../assets/ancient_history/noho_petsitters-home.jpg';
+import battleshipGameplay from '../assets/battleship/gameplay-1.jpg';
+import battleshipGameplay2 from '../assets/battleship/gameplay-2.jpg';
+import battleshipHome from '../assets/battleship/home.jpg';
+import battleshipMenu from '../assets/battleship/menu.jpg';
+import battleshipVictory from '../assets/battleship/victory.jpg';
+import calculatorCalculations from '../assets/calculator/calculations.jpg';
+import calculatorEmpty from '../assets/calculator/empty.jpg';
+import comedyComedian from '../assets/comedy/comedian-page.jpg';
+import comedyHome from '../assets/comedy/home-page.jpg';
+import cvApp from '../assets/cv/screenshot.jpg';
+import etchASketchDrawing from '../assets/etch_a_sketch/drawing.jpg';
+import libraryAdd from '../assets/library/add.jpg';
+import libraryEdit from '../assets/library/edit.jpg';
+import libraryHome from '../assets/library/home.jpg';
+import memoryCardGame from '../assets/memory_card/screenshot.jpg';
+import restaurantContact from '../assets/restaurant/contact.jpg';
+import restaurantHome from '../assets/restaurant/home.jpg';
+import restaurantMenu from '../assets/restaurant/menu.jpg';
+import shoppingCartCart from '../assets/shopping_cart/desktop-cart.jpg';
+import shoppingCartHome from '../assets/shopping_cart/desktop-home.jpg';
+import shoppingCartShopping from '../assets/shopping_cart/desktop-shop.jpg';
+import signupFormEmpty from '../assets/signup_form/empty.jpg';
+import signupFormValidation from '../assets/signup_form/validation.jpg';
+import ticTacToeGameplay from '../assets/tictactoe/gameplay.jpg';
+import ticTacToeHome from '../assets/tictactoe/home.jpg';
+import ticTacToeIntro from '../assets/tictactoe/intro.jpg';
+import ticTacToeVictory from '../assets/tictactoe/victory.jpg';
+import todoList from '../assets/todo/screenshot.jpg';
+import waldoVictory from '../assets/waldo/gameover.jpg';
+import waldoGameplay1 from '../assets/waldo/gameplay-1.jpg';
+import waldoGameplay2 from '../assets/waldo/gameplay-2.jpg';
+import waldoGameplay3 from '../assets/waldo/gameplay-3.jpg';
+import waldoHome from '../assets/waldo/home.jpg';
+import weatherApp from '../assets/weather/screenshot.jpg';
 
 export interface IProject {
   title: string;
@@ -80,8 +82,8 @@ const PROJECTS: IProject[] = [
     },
     techIcons: ['react', 'redux', 'typescript', 'sass', 'firebase', 'node', 'eslint'],
     screenshots: [
-      { url: comedyDbDesktopHome, alt: 'The Comedy DB Desktop Home Screenshot' },
-      { url: comedyDbDesktopSpecial, alt: 'The Comedy DB Desktop Special Screenshot' },
+      { url: comedyHome, alt: 'The Comedy DB Desktop Home Screenshot' },
+      { url: comedyComedian, alt: 'The Comedy DB Desktop Special Screenshot' },
     ],
     description: [
       { type: 'header', value: 'The Inspiration' },
@@ -124,7 +126,9 @@ const PROJECTS: IProject[] = [
     techIcons: ['react', 'redux', 'typescript', 'sass', 'firebase'],
     screenshots: [
       { url: waldoHome, alt: 'Wheres Waldo Home Screenshot' },
-      { url: waldoGameplay, alt: 'Wheres Waldo Gameplay Screenshot' },
+      { url: waldoGameplay1, alt: 'Wheres Waldo Gameplay Screenshot' },
+      { url: waldoGameplay2, alt: 'Wheres Waldo Gameplay Screenshot' },
+      { url: waldoGameplay3, alt: 'Wheres Waldo Gameplay Screenshot' },
       { url: waldoVictory, alt: 'Wheres Waldo Victory Screenshot' },
     ],
     description: [
