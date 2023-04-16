@@ -28,13 +28,13 @@ function Contact() {
 
   // validate fields when a value changes
   useEffect(() => {
-    if (!email || isValidEmail()) setEmailValidation('css_placeholder');
+    if (!email || isValidEmail()) setEmailValidation('validated_input');
     else setEmailValidation('A valid e-mail address is required. Example: joe@gmail.com');
 
-    if (!name || isValidName()) setNameValidation('css_placeholder');
+    if (!name || isValidName()) setNameValidation('validated_input');
     else setNameValidation('Names must be at least 2 characters long');
 
-    if (!message || isValidMessage()) setMessageValidation('css_placeholder');
+    if (!message || isValidMessage()) setMessageValidation('validated_input');
     else setMessageValidation('Messages must be at least 15 characters long');
 
     if (isValidEmail() && isValidMessage() && isValidName()) setIsFormValidated(true);
@@ -113,12 +113,12 @@ function Contact() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className={`${
-                    email && emailValidation !== 'css_placeholder' ? 'invalid' : 'valid'
+                    email && emailValidation !== 'validated_input' ? 'invalid' : 'valid'
                   }`}
                 />
                 <p
                   className={`validation-message ${
-                    emailValidation === 'css_placeholder' ? 'invisible' : ''
+                    emailValidation === 'validated_input' ? 'invisible' : ''
                   }`}
                 >
                   {emailValidation}
@@ -136,12 +136,12 @@ function Contact() {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   className={`${
-                    name && nameValidation !== 'css_placeholder' ? 'invalid' : 'valid'
+                    name && nameValidation !== 'validated_input' ? 'invalid' : 'valid'
                   }`}
                 />
                 <p
                   className={`validation-message ${
-                    nameValidation === 'css_placeholder' ? 'invisible' : ''
+                    nameValidation === 'validated_input' ? 'invisible' : ''
                   }`}
                 >
                   {nameValidation}
@@ -158,12 +158,12 @@ function Contact() {
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   className={`${
-                    message && messageValidation !== 'css_placeholder' ? 'invalid' : 'valid'
+                    message && messageValidation !== 'validated_input' ? 'invalid' : 'valid'
                   }`}
                 ></textarea>
                 <p
                   className={`validation-message ${
-                    messageValidation === 'css_placeholder' ? 'invisible' : ''
+                    messageValidation === 'validated_input' ? 'invisible' : ''
                   }`}
                 >
                   {messageValidation}
