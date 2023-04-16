@@ -3,10 +3,10 @@ import './Footer.scss';
 
 function Footer() {
   return (
-    <footer>
+    <footer aria-label='footer containing github repo link'>
       <div className='column'>
         bmilcs
-        <a href='https://www.github.com/bmilcs/portfolio'>
+        <a href='https://www.github.com/bmilcs/portfolio' aria-label='Portfolio Github Repo'>
           <Github />
         </a>
         2023
