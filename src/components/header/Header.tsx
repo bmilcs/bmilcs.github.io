@@ -5,7 +5,7 @@ function Header() {
   return (
     <header className='column' aria-label='header with navigation'>
       <BMIcon />
-      <nav aria-hidden='true'>
+      <nav>
         <ul>
           <li>
             <a href='#portfolio'>portfolio</a>
