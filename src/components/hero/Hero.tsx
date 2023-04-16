@@ -1,23 +1,9 @@
-import { useEffect } from 'react';
 import Github from '../../assets/Github';
 import LinkedIn from '../../assets/LinkedIn';
 import Button from '../button/Button';
 import './Hero.scss';
 
 function Hero() {
-  useEffect(() => {
-    // const octokit = new Octokit({
-    //   auth: 'YOUR-TOKEN',
-    // });
-    // await octokit.request('GET /repos/{owner}/{repo}/stats/code_frequency', {
-    //   owner: 'OWNER',
-    //   repo: 'REPO',
-    //   headers: {
-    //     'X-GitHub-Api-Version': '2022-11-28',
-    //   },
-    // });
-  }, []);
-
   return (
     <section className='hero' aria-label='hero with github & linkedin links'>
       <div className='hero-content column centered_grid full_height'>
