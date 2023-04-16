@@ -53,40 +53,42 @@ function Carousel({ imageArray }: TProps) {
 
   return (
     <div className='carousel'>
-      <button
-        className='carousel__images'
-        ref={carouselRef}
-        onClick={() => cycleImage()}
-        onScroll={(e) => {
-          const ele = e.target as HTMLDivElement;
-          const coords = ele.scrollLeft;
-          setScrollXPosition(coords);
-        }}
-        aria-label='view next screenshot'
-      >
-        {imageArray.map(({ url, alt }, idx) => {
-          return <img src={url} alt={`${alt}`} key={`${url}${idx}`} />;
-        })}
-      </button>
-
-      {imageArray.length > 1 && (
-        <div className='carousel__bottom-buttons'>
+      <div className='carousel__wrapper'>
+        <button
+          className='carousel__images'
+          ref={carouselRef}
+          onClick={() => cycleImage()}
+          onScroll={(e) => {
+            const ele = e.target as HTMLDivElement;
+            const coords = ele.scrollLeft;
+            setScrollXPosition(coords);
+          }}
+          aria-label='view next screenshot'
+        >
           {imageArray.map(({ url, alt }, idx) => {
-            return (
-              <button
-                className={`carousel__bottom-button ${
-                  currentImageIndex === idx ? 'currentImage' : ''
-                }`}
-                key={url}
-                aria-label={`View ${alt} Image`}
-                onClick={() => {
-                  setCurrentImageIndex(idx);
-                }}
-              ></button>
-            );
+            return <img src={url} alt={`${alt}`} key={`${url}${idx}`} />;
           })}
-        </div>
-      )}
+        </button>
+
+        {imageArray.length > 1 && (
+          <div className='carousel__bottom-buttons'>
+            {imageArray.map(({ url, alt }, idx) => {
+              return (
+                <button
+                  className={`carousel__bottom-button ${
+                    currentImageIndex === idx ? 'currentImage' : ''
+                  }`}
+                  key={url}
+                  aria-label={`View ${alt} Image`}
+                  onClick={() => {
+                    setCurrentImageIndex(idx);
+                  }}
+                ></button>
+              );
+            })}
+          </div>
+        )}
+      </div>
     </div>
   );
 }
