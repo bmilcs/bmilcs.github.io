@@ -10,7 +10,7 @@
   --fw-thin: 300;
 
   // color
-  --clr-neutral-900-t: hsla(0, 0%, 5%, 0.35);
+  --clr-neutral-900-t: hsla(0, 0%, 5%, 0.55);
   --clr-neutral-900: hsla(0, 0%, 5%, 1);
   --clr-neutral-800: hsla(0, 0%, 20%, 1);
   --clr-neutral-700: hsla(0, 0%, 30%, 1);
@@ -33,7 +33,7 @@
 
   --clr-error: var(--clr-red-100);
   --clr-success: var(--clr-green-100);
-  --clr-portfolio-bg: var(--clr-neutral-900);
+  --clr-portfolio-bg: var(--clr-neutral-900-t);
   --clr-about-bg-top: var(--clr-primary-300);
   --clr-about-bg-bottom: var(--clr-primary-400);
   --clr-header: var(--clr-neutral-200);
