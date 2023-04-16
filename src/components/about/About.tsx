@@ -33,10 +33,10 @@ function About() {
   ];
 
   return (
-    <section className='about centered_grid full_height' id='about'>
+    <section className='about centered_grid full_height' id='about' aria-labelledby='about__title'>
       <div className='column'>
         <div className='about__content'>
-          <div className='about__skills left'>
+          <div className='about__skills left' aria-label="technologies i've learned part 1">
             {technicalSkills.slice(0, technicalSkills.length / 2).map((skill) => {
               return (
                 <div className='about__skill' key={skill.name}>
@@ -49,7 +49,7 @@ function About() {
 
           <div className='about__text'>
             <div className='about__text-wrapper'>
-              <h2>About Me</h2>
+              <h2 id='about__title'>About Me</h2>
               <p>
                 Hi! My name is Bryan and I love building things both on and offline. My interest in
                 programming began in elementary school: kicking America Online users offline with
@@ -85,7 +85,7 @@ function About() {
             </div>
           </div>
 
-          <div className='about__skills right'>
+          <div className='about__skills right' aria-label="technologies i've learned part 2">
             {technicalSkills.slice(technicalSkills.length / 2).map((skill) => {
               return (
                 <div className='about__skill' key={skill.name}>

@@ -3,9 +3,9 @@ import './Header.scss';
 
 function Header() {
   return (
-    <header className='column'>
+    <header className='column' aria-label='header with navigation'>
       <BMIcon />
-      <nav>
+      <nav aria-hidden='true'>
         <ul>
           <li>
             <a href='#portfolio'>portfolio</a>

@@ -62,6 +62,7 @@ function Carousel({ imageArray }: TProps) {
           const coords = ele.scrollLeft;
           setScrollXPosition(coords);
         }}
+        aria-label='view next screenshot'
       >
         {imageArray.map(({ url, alt }, idx) => {
           return <img src={url} alt={`${alt}`} key={`${url}${idx}`} />;

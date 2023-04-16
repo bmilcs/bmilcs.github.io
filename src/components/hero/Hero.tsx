@@ -19,7 +19,7 @@ function Hero() {
   }, []);
 
   return (
-    <section className='hero'>
+    <section className='hero' aria-label='hero with github & linkedin links'>
       <div className='hero-content column centered_grid full_height'>
         <div className='hero__text'>
           <h4>Hey there :)</h4>
@@ -29,13 +29,19 @@ function Hero() {
           </h3>
 
           <div className='hero__cta'>
-            <a href='https://github.com/bmilcs' target='_blank' rel='noreferrer'>
+            <a
+              href='https://github.com/bmilcs'
+              target='_blank'
+              rel='noreferrer'
+              aria-label='My Github Profile'
+            >
               <Github />
             </a>
             <a
               href='https://www.linkedin.com/in/bryan-michael-miller/'
               target='_blank'
               rel='noreferrer'
+              aria-label='My LinkedIn Profile'
             >
               <LinkedIn />
             </a>
@@ -46,7 +52,7 @@ function Hero() {
         </div>
       </div>
 
-      <div className='custom-shape-divider-bottom-1680894835'>
+      <div className='custom-shape-divider-bottom-1680894835' aria-hidden='true'>
         <svg
           data-name='Layer 1'
           xmlns='http://www.w3.org/2000/svg'

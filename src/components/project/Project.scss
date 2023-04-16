@@ -80,6 +80,10 @@
 
   &__links {
     font-size: clamp(0.9rem, 2vw, 1rem);
+
+    &-divider {
+      display: inline;
+    }
   }
 
   &__dev-icons {

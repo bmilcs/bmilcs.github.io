@@ -4,14 +4,14 @@ import './Portfolio.scss';
 
 function Portfolio() {
   return (
-    <section className='portfolio' id='portfolio'>
+    <section className='portfolio' id='portfolio' aria-label='my portfolio'>
       <div className='column full_height centered_grid'>
         {PROJECTS.map((project, i) => {
           return <Project data={project} number={i} key={project.title} />;
         })}
       </div>
 
-      <div className='custom-shape-divider-bottom-1680894927'>
+      <div className='custom-shape-divider-bottom-1680894927' aria-hidden='true'>
         <svg
           data-name='Layer 1'
           xmlns='http://www.w3.org/2000/svg'

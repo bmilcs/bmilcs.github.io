@@ -29,7 +29,7 @@ function Contact() {
   // validate fields when a value changes
   useEffect(() => {
     if (!email || isValidEmail()) setEmailValidation('css_placeholder');
-    else setEmailValidation('A valid e-mail address is required');
+    else setEmailValidation('A valid e-mail address is required. Example: joe@gmail.com');
 
     if (!name || isValidName()) setNameValidation('css_placeholder');
     else setNameValidation('Names must be at least 2 characters long');
@@ -41,7 +41,6 @@ function Contact() {
     else setIsFormValidated(false);
   }, [email, name, message]);
 
-  //
   const handleFormSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!isFormValidated) return;
@@ -79,8 +78,8 @@ function Contact() {
 
   return (
     // book style section separator
-    <section className='contact' id='contact'>
-      <div className='custom-shape-divider-top-1680975773'>
+    <section className='contact' id='contact' aria-labelledby='contact__title'>
+      <div className='custom-shape-divider-top-1680975773' aria-hidden='true'>
         <svg
           data-name='Layer 1'
           xmlns='http://www.w3.org/2000/svg'
@@ -97,11 +96,11 @@ function Contact() {
       {/* section content */}
       <div className='column centered_grid'>
         <div className='contact__content'>
-          <h2>Get In Touch</h2>
+          <h2 id='contact__title'>Get In Touch</h2>
           <p>Do you have a question or want to work together?</p>
 
           {!isSendPending && !isSent && !isError && (
-            <form onSubmit={(e) => void handleFormSubmit(e)} noValidate>
+            <form onSubmit={(e) => void handleFormSubmit(e)} noValidate aria-label='contact'>
               {/* form data */}
               <div className='input-wrapper'>
                 <label htmlFor='email'>email</label>
@@ -109,6 +108,7 @@ function Contact() {
                   type='email'
                   name='email'
                   id='email'
+                  required
                   placeholder='email@domain.com'
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
@@ -131,6 +131,7 @@ function Contact() {
                   type='text'
                   name='name'
                   id='name'
+                  required
                   placeholder='John Doe'
                   value={name}
                   onChange={(e) => setName(e.target.value)}
@@ -152,6 +153,7 @@ function Contact() {
                 <textarea
                   name='Message'
                   id='message'
+                  required
                   placeholder='Hi Bryan!'
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}

@@ -24,15 +24,16 @@ type TProps = {
 
 function Project({ data, number }: TProps) {
   const paddedNumber = String(number + 1).padStart(2, '0');
+  const a11yId = `project__name-${number}`;
 
   return (
-    <article className='project'>
+    <article className='project' aria-labelledby={a11yId}>
       <div className='project__header'>
         <div className='project__header-text'>
           {data.links ? (
             <>
               <h3 className='project__title' data-project-number={paddedNumber}>
-                <a href={data.links.live} target='_blank' rel='noreferrer'>
+                <a href={data.links.live} target='_blank' rel='noreferrer' id={a11yId}>
                   {data.title}
                 </a>
               </h3>
@@ -40,21 +41,24 @@ function Project({ data, number }: TProps) {
               <div className='project__links'>
                 <a href={data.links.live} target='_blank' rel='noreferrer'>
                   LIVE
-                </a>{' '}
-                |{' '}
+                </a>
+                <p className='project__links-divider' aria-hidden='true'>
+                  {' '}
+                  |{' '}
+                </p>
                 <a href={data.links.repo} target='_blank' rel='noreferrer'>
                   CODE
                 </a>
               </div>
             </>
           ) : (
-            <h3 className='project__title' data-project-number={paddedNumber}>
+            <h3 className='project__title' data-project-number={paddedNumber} id={a11yId}>
               {data.title}
             </h3>
           )}
         </div>
 
-        <div className='project__dev-icons'>
+        <div className='project__dev-icons' aria-label='technology used to create project'>
           {data.techIcons.map((tech) => {
             let techComponent: ReactNode | null = null;
             let tooltip = '';
