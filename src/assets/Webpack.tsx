@@ -4,7 +4,9 @@ export default function Webpack() {
       xmlns='http://www.w3.org/2000/svg'
       preserveAspectRatio='xMidYMid meet'
       viewBox='0 0 256 290'
+      role='img'
     >
+      <title>Webpack Logo</title>
       <path fill='#FFF' d='m128 .048l128 72.405V217.31l-128 72.405L0 217.31V72.453z' />
       <path
         fill='#8ED6FB'

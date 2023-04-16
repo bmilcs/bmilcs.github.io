@@ -1,6 +1,12 @@
 export default function VSCode() {
   return (
-    <svg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='xMidYMid meet' viewBox='0 0 32 32'>
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      preserveAspectRatio='xMidYMid meet'
+      viewBox='0 0 32 32'
+      role='img'
+    >
+      <title>Visual Studio Code Logo</title>
       <path
         fill='#0065a9'
         d='m29.01 5.03l-5.766-2.776a1.742 1.742 0 0 0-1.989.338L2.38 19.8a1.166 1.166 0 0 0-.08 1.647c.025.027.05.053.077.077l1.541 1.4a1.165 1.165 0 0 0 1.489.066L28.142 5.75A1.158 1.158 0 0 1 30 6.672v-.067a1.748 1.748 0 0 0-.99-1.575Z'

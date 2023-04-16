@@ -4,7 +4,10 @@ export default function VIM() {
       xmlns='http://www.w3.org/2000/svg'
       preserveAspectRatio='xMidYMid meet'
       viewBox='0 0 256 257'
+      role='img'
     >
+      <title>VIM Logo</title>
+
       <path
         fill='#019833'
         d='M128.286 1.952L1.945 127.885L128.286 254.4l125.761-126.515L128.286 1.952'

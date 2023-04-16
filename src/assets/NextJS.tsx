@@ -4,7 +4,9 @@ export default function NextJS() {
       xmlns='http://www.w3.org/2000/svg'
       preserveAspectRatio='xMidYMid meet'
       viewBox='0 0 256 256'
+      role='img'
     >
+      <title>NextJS Logo</title>
       <defs>
         <linearGradient id='svgIDc' x1='55.633%' x2='83.228%' y1='56.385%' y2='96.08%'>
           <stop offset='0%' stopColor='#FFF' />

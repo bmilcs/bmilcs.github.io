@@ -4,7 +4,10 @@ export default function Prettier() {
       xmlns='http://www.w3.org/2000/svg'
       preserveAspectRatio='xMidYMid meet'
       viewBox='0 0 256 256'
+      role='img'
     >
+      <title>Prettier Logo</title>
+
       <rect width='24.381' height='12.19' x='182.857' y='48.762' fill='#56B3B4' rx='5' />
       <rect width='73.143' height='12.19' y='243.81' fill='#EA5E5E' rx='5' />
       <rect width='48.762' height='12.19' x='146.286' y='146.286' fill='#BF85BF' rx='5' />

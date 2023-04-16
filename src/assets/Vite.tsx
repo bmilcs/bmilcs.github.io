@@ -1,6 +1,7 @@
 export default function Vite() {
   return (
-    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'>
+    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' role='img'>
+      <title>Vite Logo</title>
       <g fill='none'>
         <path
           fill='url(#vscodeIconsFileTypeVite0)'

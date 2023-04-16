@@ -1,6 +1,12 @@
 export default function Sass() {
   return (
-    <svg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='xMidYMid meet' viewBox='0 0 32 32'>
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      preserveAspectRatio='xMidYMid meet'
+      viewBox='0 0 32 32'
+      role='img'
+    >
+      <title>SASS Logo</title>
       <path fill='#c69' d='M16 2A14 14 0 1 1 2 16A14 14 0 0 1 16 2Z' />
       <path
         fill='#fff'

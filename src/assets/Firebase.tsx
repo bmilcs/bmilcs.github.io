@@ -1,6 +1,7 @@
 function Firebase() {
   return (
-    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'>
+    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' role='img'>
+      <title>Firebase Logo</title>
       <path
         fill='#ffc24a'
         d='m5.8 24.6l.17-.237l8.02-15.214l.017-.161l-3.535-6.64a.656.656 0 0 0-1.227.207Z'

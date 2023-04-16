@@ -1,6 +1,13 @@
 function BMIcon() {
   return (
-    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='none' className='bm-icon'>
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      viewBox='0 0 100 100'
+      fill='none'
+      className='bm-icon'
+      role='img'
+    >
+      <title>Bryan Miller Logo</title>
       <rect width='100' height='100' />
       <g clipPath='url(#clip0_0_1)'>
         <rect width='100' height='100' />
