@@ -1,4 +1,7 @@
 .carousel {
+  display: grid;
+  justify-content: center;
+
   // prevent click from selecting container
   -webkit-user-select: none; // safari
   -ms-user-select: none; // ie
