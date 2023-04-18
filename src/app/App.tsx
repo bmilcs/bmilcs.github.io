@@ -6,8 +6,13 @@ import Hero from '../components/hero/Hero';
 import Portfolio from '../components/portfolio/Portfolio';
 import './App.scss';
 
+// export const WindowContext = createContext({ height: 0, width: 0 });
+
 function App() {
+  // const { height, width } = useWindowDimensions();
+
   return (
+    // <WindowContext.Provider value={{ height, width }}>
     <div className='App'>
       <Header />
       <Hero />
@@ -16,6 +21,7 @@ function App() {
       <Contact />
       <Footer />
     </div>
+    // </WindowContext.Provider>
   );
 }
 
