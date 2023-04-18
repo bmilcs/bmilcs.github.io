@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactNode, useEffect, useRef, useState } from 'react';
 import Babel from '../../assets/components/Babel';
 import CSS from '../../assets/components/CSS';
 import ESLint from '../../assets/components/ESLint';
@@ -13,6 +13,7 @@ import Sass from '../../assets/components/Sass';
 import TypeScript from '../../assets/components/TypeScript';
 import Webpack from '../../assets/components/Webpack';
 import { IProject } from '../../data/projects';
+import useElementOnScreen from '../../hooks/useElementOnScreen';
 import Carousel from '../carousel/Carousel';
 import DevIcon from '../dev_icon/DevIcon';
 import './Project.scss';
@@ -23,17 +24,33 @@ type TProps = {
 };
 
 function Project({ data, number }: TProps) {
-  const paddedNumber = String(number + 1).padStart(2, '0');
-  const a11yId = `project__name-${number}`;
+  // const articleRef = useRef<HTMLDivElement>(null);
+  const paddedProjectNumber = String(number + 1).padStart(2, '0');
+  const projectA11yId = `project__name-${number}`;
+  const articleRef = useRef<HTMLElementTagNameMap['article']>(null);
+  const isOnScreen = useElementOnScreen(articleRef, '-100px');
+  const [isTransitionDone, setTransitionDone] = useState(false);
+
+  useEffect(() => {
+    if (!isOnScreen) return;
+    articleRef.current?.classList.add('animate-in');
+  }, [isOnScreen]);
 
   return (
-    <article className='project' aria-labelledby={a11yId}>
+    <article
+      className='project'
+      aria-labelledby={projectA11yId}
+      ref={articleRef}
+      onTransitionEnd={() => {
+        setTransitionDone(true);
+      }}
+    >
       <div className='project__header'>
         <div className='project__header-text'>
           {data.links ? (
             <>
-              <h3 className='project__title' data-project-number={paddedNumber}>
-                <a href={data.links.live} target='_blank' rel='noreferrer' id={a11yId}>
+              <h3 className='project__title' data-project-number={paddedProjectNumber}>
+                <a href={data.links.live} target='_blank' rel='noreferrer' id={projectA11yId}>
                   {data.title}
                 </a>
               </h3>
@@ -52,7 +69,11 @@ function Project({ data, number }: TProps) {
               </div>
             </>
           ) : (
-            <h3 className='project__title' data-project-number={paddedNumber} id={a11yId}>
+            <h3
+              className='project__title'
+              data-project-number={paddedProjectNumber}
+              id={projectA11yId}
+            >
               {data.title}
             </h3>
           )}
@@ -147,7 +168,7 @@ function Project({ data, number }: TProps) {
         </div>
 
         <div className='project__screenshots'>
-          <Carousel imageArray={data.screenshots} />
+          <Carousel imageArray={data.screenshots} isTransitionDone={isTransitionDone} />
         </div>
       </div>
     </article>

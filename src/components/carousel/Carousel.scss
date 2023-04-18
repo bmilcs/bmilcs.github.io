@@ -9,7 +9,6 @@
 
   &__images-container {
     display: flex;
-    gap: 1rem;
     align-items: center;
     justify-content: start;
 
@@ -21,9 +20,9 @@
     background: none;
     border: 0;
 
-    cursor: pointer;
+    border-radius: var(--border-radius-200);
 
-    transition: opacity 0.3s ease-in-out;
+    cursor: pointer;
 
     img {
       scroll-snap-align: start;
@@ -45,7 +44,9 @@
     justify-content: center;
 
     grid-template-columns: repeat(auto-fit, minmax(var(--button-size), 1fr));
-    gap: 1rem;
+
+    // fixes overflow on small mobile devices
+    gap: min(1rem, 2.5vw);
 
     button {
       height: var(--button-size);

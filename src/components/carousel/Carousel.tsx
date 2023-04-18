@@ -1,38 +1,24 @@
 import { useEffect, useRef, useState } from 'react';
 import { TScreenshot } from '../../data/projects';
-
 import './Carousel.scss';
 
 type TProps = {
   imageArray: TScreenshot[];
+  isTransitionDone: boolean;
 };
 
-function Carousel({ imageArray }: TProps) {
+function Carousel({ imageArray, isTransitionDone }: TProps) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [scrollXPosition, setScrollXPosition] = useState(0);
   const carouselRef = useRef<HTMLButtonElement>(null);
 
-  // when currentImageIndex is updated, scroll to its position within
-  // the carousel image container
-
-  useEffect(() => {
-    const carousel = carouselRef.current;
-    if (carousel === null) return;
-
-    const carouselVisibleWidth = carousel.offsetWidth;
-    const currentXPosition = carousel.scrollLeft;
-    const targetXPosition = carouselVisibleWidth * currentImageIndex;
-
-    if (currentXPosition === targetXPosition) return;
-
-    carousel.scroll({ left: targetXPosition, behavior: 'smooth' });
-  }, [currentImageIndex]);
-
   // despite having no visible scrollbar, users can use enter/space/arrow keys to
   // cycle images when the carousel is focused. this keeps currentImageIndex
-  // updated if one of those input methods are used.
+  // up to date, regardless how of the scrolling occurs.
 
   useEffect(() => {
+    // a delay is needed to allow the sticky scrolling animation to complete.
+    // if no delay is present, the carousel remains stuck on the first image.
     const delayUntilScrollingStopped = setTimeout(() => {
       const carousel = carouselRef.current;
       if (carousel === null) return;
@@ -42,11 +28,31 @@ function Carousel({ imageArray }: TProps) {
       const newImageIndex = +(currentXPosition / carouselViewportWidth).toFixed(0);
 
       if (currentImageIndex === newImageIndex) return;
+
       setCurrentImageIndex(newImageIndex);
-    }, 50);
+    }, 20);
 
     return () => clearTimeout(delayUntilScrollingStopped);
   }, [scrollXPosition]);
+
+  // when currentImageIndex is updated, scroll to the image within the carousel image container
+
+  useEffect(() => {
+    const carousel = carouselRef.current;
+    if (carousel === null) return;
+
+    const carouselVisibleWidth = carousel.offsetWidth;
+    const currentXPosition = carousel.scrollLeft;
+
+    // the initial css transition on parent project element causes the scroll event to fire on
+    // carousel element. the initial image index was being assigned a random number other than
+    // index zero. to prevent this, override scroll calculations to 0 until transition is complete.
+    const targetXPosition = !isTransitionDone ? 0 : carouselVisibleWidth * currentImageIndex;
+
+    if (currentXPosition === targetXPosition) return;
+
+    carousel.scroll({ left: targetXPosition, behavior: 'smooth' });
+  }, [currentImageIndex]);
 
   // change images on click/enter/space bar
 
@@ -76,6 +82,11 @@ function Carousel({ imageArray }: TProps) {
             ref={carouselRef}
             onClick={() => cycleImage()}
             onScroll={(e) => {
+              const ele = e.target as HTMLDivElement;
+              const xPosition = ele.scrollLeft;
+              setScrollXPosition(xPosition);
+            }}
+            onTouchEnd={(e) => {
               const ele = e.target as HTMLDivElement;
               const xPosition = ele.scrollLeft;
               setScrollXPosition(xPosition);

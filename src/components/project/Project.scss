@@ -4,10 +4,19 @@
   --p-gap: 3vh;
 
   position: relative;
+
+  padding-block: var(--p-gap);
+
   color: var(--clr-neutral-300);
 
-  @media (width > 850px) {
-    padding-block: var(--p-gap);
+  opacity: 0;
+  transform: translateX(-30%);
+
+  transition: opacity 1.25s ease-out, transform 0.5s ease-out;
+
+  &.animate-in {
+    opacity: 1;
+    transform: translateX(0);
   }
 
   &__header {
@@ -148,22 +157,12 @@
   }
 
   &__screenshots {
-    width: 100%;
-    height: 100%;
-
-    img {
-      border-radius: var(--border-radius-200);
-    }
-
     @media (width <850px) {
       order: -1;
     }
   }
 
   @media (width < 850px) {
-    &__header {
-    }
-
     &__title,
     &__links,
     &__text-header {
