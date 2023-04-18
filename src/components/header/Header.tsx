@@ -1,4 +1,4 @@
-import BMIcon from '../../assets/BMIcon';
+import BMIcon from '../../assets/components/BMIcon';
 import './Header.scss';
 
 function Header() {

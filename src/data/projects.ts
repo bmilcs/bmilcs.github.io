@@ -1,11 +1,4 @@
 import adminDashboard from '../assets/admin_dashboard/screenshot.jpg';
-import cavityHome from '../assets/ancient_history/cavity-v3.0-home.jpg';
-import kashetaFarmsHome from '../assets/ancient_history/kasha-farms-01.jpg';
-import liarcHome from '../assets/ancient_history/liarc-v1.0-home.jpg';
-import malachiConstant from '../assets/ancient_history/malachi.constant-v1.0.main.jpg';
-import malachiConstant2 from '../assets/ancient_history/malachi.constant-v2.0.main.jpg';
-import nohoPetsittersContact from '../assets/ancient_history/noho_petsitters-contact.jpg';
-import nohoPetsittersHome from '../assets/ancient_history/noho_petsitters-home.jpg';
 import battleshipGameplay from '../assets/battleship/gameplay-1.jpg';
 import battleshipGameplay2 from '../assets/battleship/gameplay-2.jpg';
 import battleshipHome from '../assets/battleship/home.jpg';
@@ -16,6 +9,18 @@ import calculatorEmpty from '../assets/calculator/empty.jpg';
 import comedyComedian from '../assets/comedy/comedian-page.jpg';
 import comedyHome from '../assets/comedy/home-page.jpg';
 import cvApp from '../assets/cv/screenshot.jpg';
+import cavityHome from '../assets/early_clients/cavity-v2.0.jpg';
+import headAboveWater from '../assets/early_clients/head-above-water-v1.0.jpg';
+import kashetaFarmsHome from '../assets/early_clients/kasheta-farms.jpg';
+import kashetaPowerEquipmentHome from '../assets/early_clients/kasheta-power-equip.jpg';
+import kriegHome from '../assets/early_clients/krieg-home.jpg';
+import kriegProduct from '../assets/early_clients/krieg-product.jpg';
+import liarcBio from '../assets/early_clients/liarc-v1.0-bio.jpg';
+import malachiConstantAboutV2 from '../assets/early_clients/mc-about-v2.0.jpg';
+import malachiConstantHomeV2 from '../assets/early_clients/mc-home-v2.0.jpg';
+import malachiConstantHomeV1 from '../assets/early_clients/mc-v1.0.jpg';
+import nohoPetsittersDog from '../assets/early_clients/noho-dog-services.jpg';
+import nohoPetsittersHome from '../assets/early_clients/noho-home.jpg';
 import etchASketchDrawing from '../assets/etch_a_sketch/drawing.jpg';
 import libraryAdd from '../assets/library/add.jpg';
 import libraryEdit from '../assets/library/edit.jpg';
@@ -466,13 +471,18 @@ const PROJECTS: IProject[] = [
     title: 'Early 2000 Clients',
     techIcons: ['javascript', 'css', 'html'],
     screenshots: [
-      { url: malachiConstant2, alt: 'Malachi Constant Band Page Home' },
-      { url: malachiConstant, alt: 'Malachi Constant Band Page Home' },
-      { url: liarcHome, alt: 'Lost Inside A Rubix Cube Band Page Home' },
-      { url: cavityHome, alt: 'Cavity Band Page Home' },
+      { url: kashetaPowerEquipmentHome, alt: 'Kasheta Power Equipment Home' },
       { url: kashetaFarmsHome, alt: 'Kasheta Farms Home' },
+      { url: kriegHome, alt: 'Krieg Motorsports Home' },
+      { url: kriegProduct, alt: 'Krieg Motorsports Products' },
       { url: nohoPetsittersHome, alt: 'NoHo Petsitters Home' },
-      { url: nohoPetsittersContact, alt: 'NoHo Petsitters Contact' },
+      { url: nohoPetsittersDog, alt: 'NoHo Petsitters Dog' },
+      { url: malachiConstantHomeV2, alt: 'Malachi Constant Band Page Home v2' },
+      { url: malachiConstantAboutV2, alt: 'Malachi Constant Band Page About v2' },
+      { url: malachiConstantHomeV1, alt: 'Malachi Constant Band Home v1' },
+      { url: liarcBio, alt: 'Lost Inside A Rubix Cube Band Page Home' },
+      { url: headAboveWater, alt: 'Head Above Water Band Page Home' },
+      { url: cavityHome, alt: 'Cavity Band Page Home' },
     ],
     description: [
       { type: 'header', value: 'Local Bands & Businesses' },

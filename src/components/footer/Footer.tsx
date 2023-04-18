@@ -1,4 +1,4 @@
-import Github from '../../assets/Github';
+import Github from '../../assets/components/Github';
 import './Footer.scss';
 
 function Footer() {

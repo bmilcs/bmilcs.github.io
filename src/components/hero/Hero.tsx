@@ -1,5 +1,5 @@
-import Github from '../../assets/Github';
-import LinkedIn from '../../assets/LinkedIn';
+import Github from '../../assets/components/Github';
+import LinkedIn from '../../assets/components/LinkedIn';
 import Button from '../button/Button';
 import './Hero.scss';
 

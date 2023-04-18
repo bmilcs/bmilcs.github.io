@@ -1,17 +1,17 @@
-import Babel from '../../assets/Babel';
-import CSS from '../../assets/CSS';
-import ESLint from '../../assets/ESLint';
-import Firebase from '../../assets/Firebase';
-import HTML from '../../assets/HTML';
-import JavaScript from '../../assets/JavaScript';
-import Jest from '../../assets/Jest';
-import NodeJS from '../../assets/NodeJS';
-import React from '../../assets/React';
-import Redux from '../../assets/Redux';
-import Sass from '../../assets/Sass';
-import TypeScript from '../../assets/TypeScript';
-import VSCode from '../../assets/VSCode';
-import Webpack from '../../assets/Webpack';
+import Babel from '../../assets/components/Babel';
+import CSS from '../../assets/components/CSS';
+import ESLint from '../../assets/components/ESLint';
+import Firebase from '../../assets/components/Firebase';
+import HTML from '../../assets/components/HTML';
+import JavaScript from '../../assets/components/JavaScript';
+import Jest from '../../assets/components/Jest';
+import NodeJS from '../../assets/components/NodeJS';
+import React from '../../assets/components/React';
+import Redux from '../../assets/components/Redux';
+import Sass from '../../assets/components/Sass';
+import TypeScript from '../../assets/components/TypeScript';
+import VSCode from '../../assets/components/VSCode';
+import Webpack from '../../assets/components/Webpack';
 import './About.scss';
 
 function About() {
@@ -76,8 +76,16 @@ function About() {
                 In mid-2022, I narrowed my focus on becoming a professional developer. Following the{' '}
                 <a href='https://www.theodinproject.com/' target='_blank' rel='noreferrer'>
                   Odin Project
+                </a>{' '}
+                (
+                <a
+                  href='https://www.github.com/bmilcs/odin-project/'
+                  target='_blank'
+                  rel='noreferrer'
+                >
+                  view my progress
                 </a>
-                , all of my free time (after work and weekends) has gone toward learning the
+                ) , all of my free time, both after work & on weekends, has gone toward learning the
                 fundamentals of modern web development. Technology and problem solving have been
                 lifelong passions of mine and I am excited to share my experience and continue
                 learning in a professional setting.
