@@ -61,53 +61,52 @@ function Carousel({ imageArray }: TProps) {
 
   return (
     <div className='carousel'>
-      <div className='carousel__wrapper'>
-        {/* single image: <img>, no interactivity */}
-        {imageArray.length === 1 &&
-          imageArray.map(({ url, alt }, idx) => {
-            return <img src={url} alt={`${alt}`} key={`${url}${idx}`} />;
-          })}
+      {/* <div className='carousel__wrapper'> */}
+      {/* single image: <img>, no interactivity */}
+      {imageArray.length === 1 &&
+        imageArray.map(({ url, alt }, idx) => {
+          return <img src={url} alt={`${alt}`} key={`${url}${idx}`} />;
+        })}
 
-        {/* multiple images: interactive carousel */}
-        {imageArray.length > 1 && (
-          <>
-            <button
-              tabIndex={0}
-              className='carousel__images-container'
-              ref={carouselRef}
-              onClick={() => cycleImage()}
-              onScroll={(e) => {
-                const ele = e.target as HTMLDivElement;
-                const coords = ele.scrollLeft;
-                setScrollXPosition(coords);
-              }}
-              aria-label='image carousel'
-            >
-              {imageArray.map(({ url, alt }, idx) => {
-                return <img src={url} alt={`${alt}`} key={`${url}${idx}`} />;
-              })}
-            </button>
+      {/* multiple images: interactive carousel */}
+      {imageArray.length > 1 && (
+        <>
+          <button
+            className='carousel__images-container'
+            ref={carouselRef}
+            onClick={() => cycleImage()}
+            onScroll={(e) => {
+              const ele = e.target as HTMLDivElement;
+              const xPosition = ele.scrollLeft;
+              setScrollXPosition(xPosition);
+            }}
+            aria-label='image carousel'
+          >
+            {imageArray.map(({ url, alt }) => {
+              return <img src={url} alt={`${alt}`} key={`${url}-image`} />;
+            })}
+          </button>
 
-            {/* round navigation buttons */}
-            <div className='carousel__bottom-buttons'>
-              {imageArray.map(({ url, alt }, idx) => {
-                return (
-                  <button
-                    className={`carousel__bottom-button ${
-                      currentImageIndex === idx ? 'currentImage' : ''
-                    }`}
-                    key={url}
-                    aria-label={`View ${alt} Image`}
-                    onClick={() => {
-                      setCurrentImageIndex(idx);
-                    }}
-                  ></button>
-                );
-              })}
-            </div>
-          </>
-        )}
-      </div>
+          {/* round navigation buttons */}
+          <div className='carousel__bottom-buttons'>
+            {imageArray.map(({ url, alt }, idx) => {
+              return (
+                <button
+                  className={`carousel__bottom-button ${
+                    currentImageIndex === idx ? 'currentImage' : ''
+                  }`}
+                  key={`${url}-button`}
+                  aria-label={`View ${alt}`}
+                  onClick={() => {
+                    setCurrentImageIndex(idx);
+                  }}
+                ></button>
+              );
+            })}
+          </div>
+        </>
+      )}
+      {/* </div> */}
     </div>
   );
 }
