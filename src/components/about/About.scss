@@ -73,7 +73,9 @@
       max-width: 60ch;
     }
 
-    a {
+    a,
+    a:visited,
+    a:active {
       color: var(--clr-primary-100);
       font-weight: var(--fw-bold);
     }
