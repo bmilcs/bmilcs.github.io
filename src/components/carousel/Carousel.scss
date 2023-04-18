@@ -4,18 +4,20 @@
   display: grid;
   justify-content: center;
 
-  button {
-    z-index: 0;
+  &__wrapper {
+    position: relative;
   }
 
-  &__images {
+  &__images-container {
     display: flex;
     gap: 1rem;
     align-items: center;
     justify-content: start;
 
-    overflow-x: hidden;
+    overflow-x: scroll;
     scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
 
     background: none;
     border: 0;
@@ -25,8 +27,14 @@
     transition: opacity 0.3s ease-in-out;
 
     img {
+      min-width: 100%;
+      min-height: 100%;
       scroll-snap-align: start;
       object-fit: cover;
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
     }
   }
 
@@ -63,8 +71,8 @@
         transform: scale(1.25);
       }
 
-      &:focus {
-        outline: 2px solid var(--clr-neutral-100);
+      &:focus-visible {
+        outline: 2px solid var(--clr-neutral-200);
       }
     }
   }

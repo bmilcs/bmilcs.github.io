@@ -12,19 +12,25 @@ function Carousel({ imageArray }: TProps) {
   const [scrollXPosition, setScrollXPosition] = useState(0);
   const carouselRef = useRef<HTMLButtonElement>(null);
 
+  // when currentImageIndex is updated, scroll to its position within
+  // the carousel image container
+
   useEffect(() => {
     const carousel = carouselRef.current;
     if (carousel === null) return;
 
-    const carouselViewportWidth = carousel.offsetWidth;
-    const targetXPosition = carouselViewportWidth * currentImageIndex;
+    const carouselVisibleWidth = carousel.offsetWidth;
+    const currentXPosition = carousel.scrollLeft;
+    const targetXPosition = carouselVisibleWidth * currentImageIndex;
+
+    if (currentXPosition === targetXPosition) return;
 
     carousel.scroll({ left: targetXPosition, behavior: 'smooth' });
   }, [currentImageIndex]);
 
-  // despite having no visible scrollbar, users can use arrow keys to
+  // despite having no visible scrollbar, users can use enter/space/arrow keys to
   // cycle images when the carousel is focused. this keeps currentImageIndex
-  // updated if scrolling occurs.
+  // updated if one of those input methods are used.
 
   useEffect(() => {
     const delayUntilScrollingStopped = setTimeout(() => {
@@ -37,10 +43,12 @@ function Carousel({ imageArray }: TProps) {
 
       if (currentImageIndex === newImageIndex) return;
       setCurrentImageIndex(newImageIndex);
-    }, 100);
+    }, 50);
 
     return () => clearTimeout(delayUntilScrollingStopped);
   }, [scrollXPosition]);
+
+  // change images on click/enter/space bar
 
   const cycleImage = () => {
     setCurrentImageIndex((prev) => {
@@ -54,39 +62,50 @@ function Carousel({ imageArray }: TProps) {
   return (
     <div className='carousel'>
       <div className='carousel__wrapper'>
-        <button
-          className='carousel__images'
-          ref={carouselRef}
-          onClick={() => cycleImage()}
-          onScroll={(e) => {
-            const ele = e.target as HTMLDivElement;
-            const coords = ele.scrollLeft;
-            setScrollXPosition(coords);
-          }}
-          aria-label='view next screenshot'
-        >
-          {imageArray.map(({ url, alt }, idx) => {
+        {/* single image: <img>, no interactivity */}
+        {imageArray.length === 1 &&
+          imageArray.map(({ url, alt }, idx) => {
             return <img src={url} alt={`${alt}`} key={`${url}${idx}`} />;
           })}
-        </button>
 
+        {/* multiple images: interactive carousel */}
         {imageArray.length > 1 && (
-          <div className='carousel__bottom-buttons'>
-            {imageArray.map(({ url, alt }, idx) => {
-              return (
-                <button
-                  className={`carousel__bottom-button ${
-                    currentImageIndex === idx ? 'currentImage' : ''
-                  }`}
-                  key={url}
-                  aria-label={`View ${alt} Image`}
-                  onClick={() => {
-                    setCurrentImageIndex(idx);
-                  }}
-                ></button>
-              );
-            })}
-          </div>
+          <>
+            <button
+              tabIndex={0}
+              className='carousel__images-container'
+              ref={carouselRef}
+              onClick={() => cycleImage()}
+              onScroll={(e) => {
+                const ele = e.target as HTMLDivElement;
+                const coords = ele.scrollLeft;
+                setScrollXPosition(coords);
+              }}
+              aria-label='image carousel'
+            >
+              {imageArray.map(({ url, alt }, idx) => {
+                return <img src={url} alt={`${alt}`} key={`${url}${idx}`} />;
+              })}
+            </button>
+
+            {/* round navigation buttons */}
+            <div className='carousel__bottom-buttons'>
+              {imageArray.map(({ url, alt }, idx) => {
+                return (
+                  <button
+                    className={`carousel__bottom-button ${
+                      currentImageIndex === idx ? 'currentImage' : ''
+                    }`}
+                    key={url}
+                    aria-label={`View ${alt} Image`}
+                    onClick={() => {
+                      setCurrentImageIndex(idx);
+                    }}
+                  ></button>
+                );
+              })}
+            </div>
+          </>
         )}
       </div>
     </div>
