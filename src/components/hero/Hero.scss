@@ -2,9 +2,9 @@
   --spacer: 1.5vh;
   --timer: 1s;
 
-  @media (width < 750px) {
-    --spacer: 1.5vh;
-  }
+  // @media (width < 750px) {
+  //   --spacer: 2vh;
+  // }
 
   position: relative;
 
@@ -19,6 +19,7 @@
 
     animation: fadeInFromLeft var(--timer) cubic-bezier(0, 1.32, 1, 1) 1 normal forwards;
 
+    // Hey there :)
     h4 {
       font-family: var(--ff-main);
       font-weight: var(--fw-thin);
@@ -27,6 +28,10 @@
       letter-spacing: 2px;
 
       transform: rotate(-4deg) translateX(-5vw);
+
+      @media (width < 400px) {
+        transform: rotate(-4deg) translateX(0);
+      }
 
       margin-bottom: calc(var(--spacer) * 5);
     }
