@@ -7,6 +7,11 @@
   -ms-user-select: none; // ie
   user-select: none; // standard
 
+  // standalone images or those in container below
+  img {
+    border-radius: var(--border-radius-200);
+  }
+
   &__images-container {
     display: flex;
     align-items: center;
@@ -19,8 +24,6 @@
 
     background: none;
     border: 0;
-
-    border-radius: var(--border-radius-200);
 
     cursor: pointer;
 

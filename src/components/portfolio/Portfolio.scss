@@ -4,36 +4,55 @@
   display: grid;
   place-items: center;
 
-  padding-top: var(--section-vertical-padding);
-  padding-bottom: calc(var(--section-vertical-padding) * 2);
+  // offset padding-top to accommodate for the wavy separator
+  padding-block: calc(var(--section-vertical-padding) * 2) var(--section-vertical-padding);
 
   background: var(--clr-portfolio-bg);
   color: var(--clr-neutral-200);
 
-  &__note {
-    color: var(--clr-neutral-500);
-    justify-self: start;
-    margin-bottom: 2rem;
+  &__title {
+    position: relative;
+
+    margin-bottom: min(3.5vw, 3rem);
+    padding: 1rem;
+
+    color: var(--clr-neutral-100);
+
+    font-size: clamp(2rem, 8vw, 3rem);
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 80%;
+      left: 3.1ch;
+
+      width: 5ch;
+      height: 0.3ch;
+
+      background: var(--clr-primary-100);
+
+      animation: pulseScale infinite 1s ease-in-out;
+    }
   }
 }
 
-.custom-shape-divider-bottom-1680894927 {
+.custom-shape-divider-top-1681930915 {
   position: absolute;
-  bottom: 0;
+  top: 0;
   left: 0;
   width: 100%;
   overflow: hidden;
   line-height: 0;
+  transform: rotate(180deg);
 }
 
-.custom-shape-divider-bottom-1680894927 svg {
+.custom-shape-divider-top-1681930915 svg {
   position: relative;
   display: block;
   width: calc(100% + 1.3px);
-  // fixed: static height looked too wavy on mobile
-  height: min(10vw, 75px);
+  height: var(--section-separator-height);
 }
 
-.custom-shape-divider-bottom-1680894927 .shape-fill {
-  fill: var(--clr-about-bg-top);
+.custom-shape-divider-top-1681930915 .shape-fill {
+  fill: var(--clr-about-bg-bottom);
 }

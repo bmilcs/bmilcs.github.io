@@ -34,8 +34,8 @@
   --clr-error: var(--clr-red-100);
   --clr-success: var(--clr-green-100);
   --clr-portfolio-bg: var(--clr-neutral-900-t);
-  --clr-about-bg-top: var(--clr-primary-300);
-  --clr-about-bg-bottom: var(--clr-primary-400);
+  --clr-about-bg-top: var(--clr-neutral-100);
+  --clr-about-bg-bottom: var(--clr-neutral-200);
   --clr-header: var(--clr-neutral-200);
 
   --box-shadow-100: 0px 0px 13px 3px var(--clr-neutral-900-t);
@@ -51,10 +51,15 @@
 
   --transition-short: 0.25s;
 
-  --fs-responsive-baseline: clamp(0.9rem, 2vw, 1rem);
+  --fs-responsive-baseline: clamp(0.9rem, 3.15vw, 1rem);
   --fs-responsive-small: calc(calc(--fs-responsive-baseline) * 0.9);
+  --fs-responsive-large: clamp(0.9rem, 3.15vw, 1.1rem);
+
+  --fs-section-header: clamp(2rem, 8vw, 3rem);
 
   --section-vertical-padding: min(10vw, 10vh);
+
+  --section-separator-height: min(80px, 7.5vw);
 }
 
 h1,

@@ -43,7 +43,7 @@
     position: relative;
     z-index: 2;
 
-    font-size: clamp(1.25rem, 3vw, 2rem);
+    font-size: clamp(1.5rem, 5vw, 2rem);
     font-weight: var(--fw-xbold);
     text-transform: uppercase;
 
@@ -77,7 +77,6 @@
 
       @media (width < 850px) {
         left: 50%;
-        // top: calc(-100% - var(--line-thickness) * 2.5);
         top: -100%;
         width: max-content;
         transform: rotate(0) translateX(-50%);
@@ -96,6 +95,7 @@
   &__dev-icons {
     display: flex;
     gap: 0.5rem;
+    align-items: center;
 
     transition: opacity var(--transition-short) ease-in-out;
 
@@ -106,7 +106,7 @@
     @media (width < 850px) {
       > * {
         width: 24px;
-        margin-top: var(--title-gap);
+        margin-top: var(--p-gap);
       }
 
       // tooltips extend beyond viewport on small screens

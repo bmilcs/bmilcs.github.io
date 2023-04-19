@@ -1,20 +1,36 @@
+import { useEffect, useRef } from 'react';
 import Babel from '../../assets/components/Babel';
 import CSS from '../../assets/components/CSS';
 import ESLint from '../../assets/components/ESLint';
 import Firebase from '../../assets/components/Firebase';
+import Github from '../../assets/components/Github';
 import HTML from '../../assets/components/HTML';
 import JavaScript from '../../assets/components/JavaScript';
 import Jest from '../../assets/components/Jest';
+import NPM from '../../assets/components/NPM';
 import NodeJS from '../../assets/components/NodeJS';
 import React from '../../assets/components/React';
 import Redux from '../../assets/components/Redux';
 import Sass from '../../assets/components/Sass';
 import TypeScript from '../../assets/components/TypeScript';
+import VIM from '../../assets/components/VIM';
 import VSCode from '../../assets/components/VSCode';
 import Webpack from '../../assets/components/Webpack';
+import useElementOnScreen from '../../hooks/useElementOnScreen';
 import './About.scss';
 
 function About() {
+  const aboutRef = useRef<HTMLDivElement>(null);
+  const leftColumnRef = useRef<HTMLDivElement>(null);
+  const rightColumnRef = useRef<HTMLDivElement>(null);
+  const isOnScreen = useElementOnScreen(aboutRef, '-100px');
+
+  useEffect(() => {
+    if (!isOnScreen) return;
+    leftColumnRef.current?.classList.add('animate-in');
+    rightColumnRef.current?.classList.add('animate-in');
+  }, [isOnScreen]);
+
   const technicalSkills = [
     { icon: <React />, name: 'React' },
     { icon: <Redux />, name: 'Redux' },
@@ -23,85 +39,57 @@ function About() {
     { icon: <CSS />, name: 'CSS' },
     { icon: <Sass />, name: 'SASS' },
     { icon: <HTML />, name: 'HTML' },
-    { icon: <Firebase />, name: 'Firebase' },
-    { icon: <NodeJS />, name: 'NodeJS' },
+    { icon: <Github />, name: 'Git' },
+    { icon: <NPM />, name: 'NPM' },
     { icon: <Jest />, name: 'Jest' },
-    { icon: <Babel />, name: 'Babel' },
     { icon: <Webpack />, name: 'Webpack' },
+    { icon: <Babel />, name: 'Babel' },
     { icon: <ESLint />, name: 'ESLint' },
+    { icon: <NodeJS />, name: 'NodeJS' },
+    { icon: <Firebase />, name: 'Firebase' },
+    { icon: <VIM />, name: 'VIM' },
     { icon: <VSCode />, name: 'VSCode' },
   ];
 
   return (
-    <section className='about centered_grid full_height' id='about' aria-labelledby='about__title'>
+    <section className='about' id='about' aria-labelledby='about__title'>
       <div className='column'>
-        <div className='about__content'>
-          <div className='about__skills left' aria-label="technologies i've learned part 1">
-            {technicalSkills.slice(0, technicalSkills.length / 2).map((skill) => {
-              return (
-                <div className='about__skill' key={skill.name}>
-                  {skill.icon}
-                  <p>{skill.name}</p>
-                </div>
-              );
-            })}
+        <div className='about__content' ref={aboutRef}>
+          <div className='about__text' ref={leftColumnRef}>
+            <h2 id='about__title'>About Me</h2>
+            <p>
+              Hi there, I&apos;m Bryan – a <strong>driven web developer</strong> with a passion for
+              programming and knack for problem-solving. With experience building websites since the
+              early 2000&apos;s and managing homelab servers running VMWare,{' '}
+              <a href='https://github.com/bmilcs/dotfiles-old'>Linux</a> virtual machines and Docker
+              containers, I&apos;ve honed my ability to learn and adopt new technology. As I pursue
+              my dream of becoming a professional developer, I&apos;ve been devoting all my free
+              time to learning modern web development through the Odin Project (
+              <a href='https://www.theodinproject.com/' target='_blank' rel='noreferrer'>
+                view my progress
+              </a>
+              ). I&apos;m excited to put my expertise to work and{' '}
+              <strong>help your business</strong> grow and thrive. Let&apos;s work together to
+              create something amazing!
+            </p>
           </div>
 
-          <div className='about__text'>
-            <div className='about__text-wrapper'>
-              <h2 id='about__title'>About Me</h2>
-              <p>
-                Hi! My name is Bryan and I love building things both on and offline. My interest in
-                programming began in elementary school: kicking America Online users offline with
-                Visual Basic. In high school, Adobe Photoshop, HTML & CSS caught my interest. Before
-                long, I was responsible for 5 local band web sites and eventually took on a few
-                small paying clients.
-              </p>
-
-              <p>
-                Over the years, I have gained experience with BASH, AutoHotkey and PowerShell
-                scripting to automate both personal and work related activities.
-              </p>
-
-              <p>
-                <a href='https://github.com/bmilcs/dotfiles-old'>Linux</a>, networking & servers
-                became a part of my life in the late 2010s. In my leisure time, I manage a Dell
-                PowerEdge R730XD server, running VMWare ESXI and it hosts a virtualized TrueNAS
-                environment, docker-compose stack, family media server and more. I have dabbled with
-                reverse proxies (NGiNX), the LAMP stack, WordPress and several Linux distros:
-                Debian, Ubuntu, Manjaro, Arch, DietPi, Raspbian, etc.
-              </p>
-
-              <p>
-                In mid-2022, I narrowed my focus on becoming a professional developer. Following the{' '}
-                <a href='https://www.theodinproject.com/' target='_blank' rel='noreferrer'>
-                  Odin Project
-                </a>{' '}
-                (
-                <a
-                  href='https://www.github.com/bmilcs/odin-project/'
-                  target='_blank'
-                  rel='noreferrer'
-                >
-                  view my progress
-                </a>
-                ) , all of my free time, both after work & on weekends, has gone toward learning the
-                fundamentals of modern web development. Technology and problem solving have been
-                lifelong passions of mine and I am excited to share my experience and continue
-                learning in a professional setting.
-              </p>
+          <div
+            className={'about__skills'}
+            aria-label="technologies i've learned part"
+            ref={rightColumnRef}
+          >
+            <h3 className='about__skills-title'>My Skills</h3>
+            <div className='about__skills-wrapper'>
+              {technicalSkills.map((skill) => {
+                return (
+                  <div className='about__skill' key={skill.name}>
+                    {skill.icon}
+                    <p>{skill.name}</p>
+                  </div>
+                );
+              })}
             </div>
-          </div>
-
-          <div className='about__skills right' aria-label="technologies i've learned part 2">
-            {technicalSkills.slice(technicalSkills.length / 2).map((skill) => {
-              return (
-                <div className='about__skill' key={skill.name}>
-                  {skill.icon}
-                  <p>{skill.name}</p>
-                </div>
-              );
-            })}
           </div>
         </div>
       </div>

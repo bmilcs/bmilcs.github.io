@@ -4,14 +4,8 @@ import './Portfolio.scss';
 
 function Portfolio() {
   return (
-    <section className='portfolio' id='portfolio' aria-label='my portfolio'>
-      <div className='column full_height centered_grid'>
-        {PROJECTS.map((project, i) => {
-          return <Project data={project} number={i} key={project.title} />;
-        })}
-      </div>
-
-      <div className='custom-shape-divider-bottom-1680894927' aria-hidden='true'>
+    <section className='portfolio' aria-label='my portfolio'>
+      <div className='custom-shape-divider-top-1681930915'>
         <svg
           data-name='Layer 1'
           xmlns='http://www.w3.org/2000/svg'
@@ -23,6 +17,17 @@ function Portfolio() {
             className='shape-fill'
           ></path>
         </svg>
+      </div>
+
+      {/* navigation point: skip over wavy divider */}
+      <h2 id='portfolio' className='portfolio__title'>
+        My Portfolio
+      </h2>
+
+      <div className='column full_height centered_grid'>
+        {PROJECTS.map((project, i) => {
+          return <Project data={project} number={i} key={project.title} />;
+        })}
       </div>
     </section>
   );

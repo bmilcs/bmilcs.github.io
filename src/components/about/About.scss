@@ -1,136 +1,123 @@
 .about {
-  --about-gap: 0rem;
-  --content-bg-color: var(--clr-neutral-900-t);
-  --content-text-color: var(--clr-neutral-100);
-  --content-border-radius: var(--border-radius-100);
-  --content-vertical-padding: max(5vh, 2rem);
+  --about-gap: min(4.5vh, 3rem);
+  padding-block: var(--section-vertical-padding);
 
   color: var(--clr-neutral-900);
   background: linear-gradient(var(--clr-about-bg-top), var(--clr-about-bg-bottom));
 
-  padding-top: var(--section-vertical-padding);
-  padding-bottom: calc(var(--section-vertical-padding) * 1.5);
-
   &__content {
     display: grid;
+    grid-template-columns: 1.5fr 1fr;
     gap: var(--about-gap);
-    grid-template-columns: 1fr 1fr;
 
-    background: var(--content-bg-color);
-
-    border-radius: var(--content-border-radius);
-
-    padding-block: var(--content-vertical-padding);
-
-    @media (width >1000px) {
-      grid-template-columns: 1fr max-content 1fr;
-      gap: 0;
+    @media (width < 950px) {
+      grid-template-columns: 1fr;
     }
   }
 
+  h2,
+  h3 {
+    font-size: clamp(2rem, 8vw, 3rem);
+  }
+
   &__text {
-    display: grid;
-    gap: 2rem;
-    place-items: center;
+    opacity: 0;
+    transform: translateX(-30%);
 
-    padding-block: var(--content-vertical-padding);
+    transition: opacity 1.25s ease-out, transform 0.5s ease-out;
 
-    color: var(--content-text-color);
-
-    @media (width < 1000px) {
-      grid-column: 1/3;
-
-      padding-inline: 5vw;
-      padding-block: 5vh;
-      order: -1;
-    }
-
-    &-wrapper {
-      display: grid;
-      gap: 2rem;
+    &.animate-in {
+      opacity: 1;
+      transform: translateX(0);
     }
 
     h2 {
       position: relative;
 
-      text-transform: uppercase;
-      font-size: 2rem;
+      margin-bottom: var(--about-gap);
+
+      color: var(--clr-neutral-900);
 
       &::after {
         content: '';
         position: absolute;
         top: 100%;
-        left: 5.35ch;
+        left: 4.6ch;
         width: 2ch;
         height: 0.35ch;
-        background: var(--clr-accent-100);
+        background: var(--clr-primary-100);
         animation: pulseScale infinite 1s ease-in-out;
       }
     }
 
     p {
-      line-height: 1.5;
-      max-width: 60ch;
+      font-size: clamp(0.9rem, 3.15vw, 1.1rem);
+      line-height: 1.8;
     }
 
     a,
     a:visited,
     a:active {
-      color: var(--clr-primary-100);
+      color: var(--clr-primary-200);
       font-weight: var(--fw-bold);
     }
   }
 
   &__skills {
-    display: grid;
-    place-items: center;
-    gap: var(--about-gap);
+    opacity: 0;
+    transform: translateX(30%);
 
-    padding-block: var(--content-vertical-padding);
+    transition: opacity 1.25s ease-out, transform 0.5s ease-out;
 
-    @media (width < 1000px) {
-      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-      padding-block: 0rem;
-
-      &.left {
-        justify-self: end;
-        width: min(100%, 30ch);
-      }
-      &.right {
-        justify-self: start;
-        width: min(100%, 30ch);
-      }
+    &.animate-in {
+      opacity: 1;
+      transform: translateX(0);
     }
   }
 
+  &__skills-title {
+    margin-bottom: var(--about-gap);
+  }
+
+  &__skills-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1rem;
+  }
+
   &__skill {
-    display: grid;
-    place-items: center;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 
-    padding: 0.75rem;
+    padding: 0.5rem;
 
-    color: var(--content-text-color);
+    color: var(--clr-neutral-700);
+    background: var(--clr-neutral-300);
+    border-radius: var(--border-radius-100);
 
-    transition: transform 0.25s ease-in-out;
+    filter: grayscale(100%) contrast(1);
+
+    transition: all 0.2s ease-in-out;
 
     &:hover {
-      transform: translateX(-10px);
-    }
+      transform: translateY(-5px) scale(1.25);
+      filter: grayscale(0%);
 
-    @media (width > 1000px) {
-      width: 100%;
+      color: var(--clr-neutral-100);
+      background: var(--clr-neutral-800);
     }
 
     svg {
-      width: min(36px, 25vw);
+      width: 28px;
+      aspect-ratio: 1/1;
     }
 
     p {
-      margin-top: 0.5rem;
-      font-size: 0.8rem;
-      text-transform: uppercase;
+      padding-right: 0.75rem;
+
       font-weight: var(--fw-bold);
+      font-size: 0.95rem;
     }
   }
 }

@@ -1,6 +1,4 @@
 .contact {
-  --section-separator-height: min(75px, 10vw);
-
   position: relative;
   padding-block: calc(var(--section-separator-height) + var(--section-vertical-padding))
     var(--section-vertical-padding);
@@ -13,7 +11,7 @@
 
   h2 {
     text-transform: uppercase;
-    font-size: 2rem;
+    font-size: var(--fs-section-header);
   }
 
   p,
@@ -71,8 +69,6 @@
       outline: var(--border-standard);
       border: 0;
       border-radius: var(--border-radius-100);
-
-      // outline-offset: 4px;
 
       color: var(--clr-neutral-100);
       background: var(--clr-neutral-700);
@@ -174,5 +170,5 @@
 }
 
 .custom-shape-divider-top-1680975773 .shape-fill {
-  fill: var(--clr-about-bg-bottom);
+  fill: var(--clr-portfolio-bg);
 }
