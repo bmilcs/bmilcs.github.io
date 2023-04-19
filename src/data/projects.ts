@@ -48,6 +48,7 @@ import weatherApp from '../assets/weather/screenshot.jpg';
 
 export interface IProject {
   title: string;
+  featured: boolean;
   links?: {
     live: string;
     repo: string;
@@ -81,6 +82,7 @@ type TTech =
 const PROJECTS: IProject[] = [
   {
     title: 'the comedy db',
+    featured: true,
     links: {
       live: 'https://comedy.bmilcs.com',
       repo: 'https://github.com/bmilcs/odin-javascript-final-project',
@@ -124,6 +126,7 @@ const PROJECTS: IProject[] = [
 
   {
     title: 'where is waldo?',
+    featured: true,
     links: {
       live: 'https://bmilcs.com/odin-wheres-waldo/',
       repo: 'https://github.com/bmilcs/odin-wheres-waldo',
@@ -154,6 +157,7 @@ const PROJECTS: IProject[] = [
 
   {
     title: 'shopping cart',
+    featured: true,
     links: {
       live: 'https://bmilcs.github.io/odin-shopping-cart/',
       repo: 'https://github.com/bmilcs/odin-shopping-cart',
@@ -181,6 +185,7 @@ const PROJECTS: IProject[] = [
 
   {
     title: 'memory game',
+    featured: false,
     links: {
       live: 'https://bmilcs.com/odin-memory-card/',
       repo: 'https://github.com/bmilcs/odin-memory-card',
@@ -204,6 +209,7 @@ const PROJECTS: IProject[] = [
 
   {
     title: 'cv application',
+    featured: false,
     links: {
       live: 'https://bmilcs.com/odin-cv-application/',
       repo: 'https://github.com/bmilcs/odin-cv-application',
@@ -227,6 +233,7 @@ const PROJECTS: IProject[] = [
 
   {
     title: 'battleship',
+    featured: true,
     links: {
       live: 'https://bmilcs.com/odin-battleship/',
       repo: 'https://github.com/bmilcs/odin-battleship/',
@@ -256,6 +263,7 @@ const PROJECTS: IProject[] = [
 
   {
     title: 'weather app',
+    featured: false,
     links: {
       live: 'https://bmilcs.com/odin-weather-app/',
       repo: 'https://github.com/bmilcs/odin-weather-app',
@@ -279,6 +287,7 @@ const PROJECTS: IProject[] = [
 
   {
     title: 'todo list',
+    featured: false,
     links: {
       live: 'https://bmilcs.com/odin-todo-list/',
       repo: 'https://github.com/bmilcs/odin-todo-list',
@@ -302,6 +311,7 @@ const PROJECTS: IProject[] = [
 
   {
     title: 'restaurant page',
+    featured: true,
     links: {
       live: 'https://bmilcs.com/odin-restaurant-page/',
       repo: 'https://github.com/bmilcs/odin-restaurant-page',
@@ -328,6 +338,7 @@ const PROJECTS: IProject[] = [
 
   {
     title: 'tic tac toe',
+    featured: false,
     links: {
       live: 'https://bmilcs.com/odin-tic-tac-toe/',
       repo: 'https://github.com/bmilcs/odin-tic-tac-toe',
@@ -356,6 +367,7 @@ const PROJECTS: IProject[] = [
 
   {
     title: 'library',
+    featured: false,
     links: {
       live: 'https://bmilcs.com/odin-library/',
       repo: 'https://github.com/bmilcs/odin-library',
@@ -382,6 +394,7 @@ const PROJECTS: IProject[] = [
 
   {
     title: 'admin dashboard',
+    featured: false,
     links: {
       live: 'https://bmilcs.com/odin-admin-dashboard/',
       repo: 'https://github.com/bmilcs/odin-admin-dashboard',
@@ -405,6 +418,7 @@ const PROJECTS: IProject[] = [
 
   {
     title: 'signup form',
+    featured: false,
     links: {
       live: 'https://bmilcs.com/odin-signup-form',
       repo: 'https://github.com/bmilcs/odin-signup-form',
@@ -430,6 +444,7 @@ const PROJECTS: IProject[] = [
 
   {
     title: 'calculator',
+    featured: false,
     links: {
       live: 'https://bmilcs.github.io/odin-calculator/',
       repo: 'https://github.com/bmilcs/odin-calculator',
@@ -451,6 +466,7 @@ const PROJECTS: IProject[] = [
 
   {
     title: 'etch-a-sketch',
+    featured: false,
     links: {
       live: 'https://bmilcs.com/odin-etch-a-sketch/',
       repo: 'https://github.com/bmilcs/odin-etch-a-sketch',
@@ -469,6 +485,7 @@ const PROJECTS: IProject[] = [
 
   {
     title: 'Early 2000 Clients',
+    featured: true,
     techIcons: ['javascript', 'css', 'html'],
     screenshots: [
       { url: kashetaPowerEquipmentHome, alt: 'Kasheta Power Equipment Home' },
