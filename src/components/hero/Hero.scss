@@ -68,7 +68,7 @@
           background-color: var(--clr-primary-100);
 
           transform: rotate(-2deg) skew(-5deg);
-          animation: pulseScale 1s infinite ease-in-out;
+          animation: pulseSkewScale 1s infinite ease-in-out;
         }
       }
     }

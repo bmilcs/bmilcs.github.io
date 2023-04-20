@@ -20,6 +20,16 @@
 
     font-size: clamp(2rem, 8vw, 3rem);
 
+    opacity: 0;
+    transform: translateX(-30%);
+
+    transition: opacity 1.25s ease-out, transform 0.5s ease-out;
+
+    &.animate-in {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
     &::after {
       content: '';
       position: absolute;
@@ -31,8 +41,33 @@
 
       background: var(--clr-primary-100);
 
-      animation: pulseScale infinite 1s ease-in-out;
+      animation: pulseSkewScale infinite 1s ease-in-out;
     }
+  }
+
+  &__view-more {
+    display: grid;
+    place-items: center;
+
+    background: none;
+    border: 0;
+
+    cursor: pointer;
+
+    svg {
+      width: min(50px, 10vw);
+      border-radius: 1rem;
+      padding: min(0.5rem, 3vw);
+
+      fill: var(--clr-neutral-500);
+      background: var(--clr-neutral-800);
+
+      animation: pulseScale 1.25s infinite;
+    }
+  }
+
+  &__extra-projects {
+    margin-top: 3vh;
   }
 }
 

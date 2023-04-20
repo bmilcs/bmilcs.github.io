@@ -24,7 +24,6 @@ type TProps = {
 };
 
 function Project({ data, number }: TProps) {
-  // const articleRef = useRef<HTMLDivElement>(null);
   const paddedProjectNumber = String(number + 1).padStart(2, '0');
   const projectA11yId = `project__name-${number}`;
   const articleRef = useRef<HTMLElementTagNameMap['article']>(null);

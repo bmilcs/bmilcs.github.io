@@ -311,7 +311,7 @@ const PROJECTS: IProject[] = [
 
   {
     title: 'restaurant page',
-    featured: true,
+    featured: false,
     links: {
       live: 'https://bmilcs.com/odin-restaurant-page/',
       repo: 'https://github.com/bmilcs/odin-restaurant-page',

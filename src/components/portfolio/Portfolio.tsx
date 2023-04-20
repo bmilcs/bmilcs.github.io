@@ -1,8 +1,22 @@
+import { useEffect, useRef, useState } from 'react';
+import Minus from '../../assets/components/Minus';
+import Plus from '../../assets/components/Plus';
 import PROJECTS from '../../data/projects';
+import useElementOnScreen from '../../hooks/useElementOnScreen';
 import Project from '../project/Project';
 import './Portfolio.scss';
 
 function Portfolio() {
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const [renderAllProjects, setRenderAllProjects] = useState(false);
+  // const [renderExpandButton, setRenderExpandButton] = useState(false);
+  const isOnScreen = useElementOnScreen(titleRef);
+
+  useEffect(() => {
+    if (!isOnScreen) return;
+    titleRef.current?.classList.add('animate-in');
+  }, [isOnScreen]);
+
   return (
     <section className='portfolio' aria-label='my portfolio'>
       <div className='custom-shape-divider-top-1681930915'>
@@ -19,15 +33,36 @@ function Portfolio() {
         </svg>
       </div>
 
-      {/* navigation point: skip over wavy divider */}
-      <h2 id='portfolio' className='portfolio__title'>
-        My Portfolio
-      </h2>
-
       <div className='column full_height centered_grid'>
-        {PROJECTS.map((project, i) => {
+        {/* navigation point: skip over wavy divider */}
+        <h2 id='portfolio' className='portfolio__title' ref={titleRef}>
+          My Portfolio
+        </h2>
+
+        {/* featured projects */}
+        {PROJECTS.filter((project) => project.featured).map((project, i) => {
           return <Project data={project} number={i} key={project.title} />;
         })}
+
+        <button
+          className='portfolio__view-more'
+          // data-tooltip='View All Projects'
+          onClick={() => {
+            setRenderAllProjects((prev) => !prev);
+          }}
+          aria-label={`${renderAllProjects ? 'Hide Extra Projects' : 'View All Projects'}`}
+        >
+          {renderAllProjects ? <Minus /> : <Plus />}
+        </button>
+
+        {/* remainder of projects */}
+        {renderAllProjects && (
+          <div className='portfolio__extra-projects'>
+            {PROJECTS.filter((project) => !project.featured).map((project, i) => {
+              return <Project data={project} number={i} key={project.title} />;
+            })}
+          </div>
+        )}
       </div>
     </section>
   );
