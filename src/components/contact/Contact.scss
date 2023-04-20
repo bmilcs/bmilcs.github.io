@@ -7,18 +7,47 @@
     width: 100%;
     display: grid;
     place-items: center;
+    gap: 1rem;
   }
 
-  h2 {
-    text-transform: uppercase;
-    font-size: var(--fs-section-header);
-  }
+  &__header {
+    opacity: 0;
+    transform: translateX(30%);
 
-  p,
-  h2 {
-    color: var(--clr-neutral-200);
-    text-align: center;
-    margin-bottom: calc(var(--section-vertical-padding) / 16);
+    transition: opacity 1.25s ease-out, transform 0.5s ease-out;
+
+    &.animate-in {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    h2 {
+      position: relative;
+
+      text-transform: uppercase;
+      font-size: var(--fs-section-header);
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 105%;
+        left: 1ch;
+        transform: translateX(-50%);
+
+        width: 80%;
+        height: 0.3ch;
+
+        background: var(--clr-primary-100);
+
+        animation: pulseSkewScale infinite 1s ease-in-out;
+      }
+    }
+
+    h2 {
+      color: var(--clr-neutral-200);
+      text-align: center;
+      margin-bottom: calc(var(--section-vertical-padding) / 16);
+    }
   }
 
   form {
@@ -29,6 +58,19 @@
 
     width: min(100%, 600px);
     padding: min(1.5rem, 10vw);
+
+    background: var(--clr-neutral-900-t);
+    border-radius: var(--border-radius-200);
+
+    opacity: 0;
+    transform: translateX(-30%);
+
+    transition: opacity 1.25s ease-out, transform 0.5s ease-out;
+
+    &.animate-in {
+      opacity: 1;
+      transform: translateX(0);
+    }
 
     .input-wrapper {
       > * {
@@ -51,7 +93,7 @@
       text-transform: uppercase;
       letter-spacing: 1px;
 
-      color: var(--clr-neutral-600);
+      color: var(--clr-neutral-300);
     }
 
     input,
@@ -71,10 +113,10 @@
       border-radius: var(--border-radius-100);
 
       color: var(--clr-neutral-100);
-      background: var(--clr-neutral-700);
+      background: var(--clr-neutral-900-t);
 
       &::placeholder {
-        color: var(--clr-neutral-450);
+        color: var(--clr-neutral-500);
       }
 
       &:focus {

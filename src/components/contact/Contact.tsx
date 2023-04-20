@@ -1,7 +1,13 @@
-import { FormEvent, useEffect, useState } from 'react';
+import { FormEvent, useEffect, useRef, useState } from 'react';
+import useElementOnScreen from '../../hooks/useElementOnScreen';
 import './Contact.scss';
 
 function Contact() {
+  const headerRef = useRef<HTMLDivElement>(null);
+  const formRef = useRef<HTMLFormElement>(null);
+  const contactRef = useRef<HTMLDivElement>(null);
+  const isOnScreen = useElementOnScreen(contactRef);
+
   const [email, setEmail] = useState('');
   const [emailValidation, setEmailValidation] = useState(' ');
   const [name, setName] = useState('');
@@ -12,6 +18,12 @@ function Contact() {
   const [isSendPending, setIsSendPending] = useState(false);
   const [isSent, setIsSent] = useState(false);
   const [isError, setIsError] = useState(false);
+
+  useEffect(() => {
+    if (!isOnScreen) return;
+    headerRef.current?.classList.add('animate-in');
+    formRef.current?.classList.add('animate-in');
+  }, [isOnScreen]);
 
   const isValidEmail = () => {
     const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
@@ -78,7 +90,7 @@ function Contact() {
 
   return (
     // book style section separator
-    <section className='contact' id='contact' aria-labelledby='contact__title'>
+    <section className='contact' id='contact' aria-labelledby='contact__title' ref={contactRef}>
       <div className='custom-shape-divider-top-1680975773' aria-hidden='true'>
         <svg
           data-name='Layer 1'
@@ -96,11 +108,19 @@ function Contact() {
       {/* section content */}
       <div className='column centered_grid'>
         <div className='contact__content'>
-          <h2 id='contact__title'>Get In Touch</h2>
-          <p>Do you have a question or want to work together?</p>
+          <div className='contact__header' ref={headerRef}>
+            <h2 id='contact__title'>Contact Me</h2>
+            {/* <p>Do you have a question or want to work together?</p> */}
+            {/* <p>Feedback is always appreciated!</p> */}
+          </div>
 
           {!isSendPending && !isSent && !isError && (
-            <form onSubmit={(e) => void handleFormSubmit(e)} noValidate aria-label='contact'>
+            <form
+              onSubmit={(e) => void handleFormSubmit(e)}
+              noValidate
+              aria-label='contact'
+              ref={formRef}
+            >
               {/* form data */}
               <div className='input-wrapper'>
                 <label htmlFor='email'>email</label>

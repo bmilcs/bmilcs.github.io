@@ -9,7 +9,6 @@ import './Portfolio.scss';
 function Portfolio() {
   const titleRef = useRef<HTMLHeadingElement>(null);
   const [renderAllProjects, setRenderAllProjects] = useState(false);
-  // const [renderExpandButton, setRenderExpandButton] = useState(false);
   const isOnScreen = useElementOnScreen(titleRef);
 
   useEffect(() => {
