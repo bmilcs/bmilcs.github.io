@@ -5,8 +5,7 @@ import './Contact.scss';
 function Contact() {
   const headerRef = useRef<HTMLDivElement>(null);
   const formRef = useRef<HTMLFormElement>(null);
-  const contactRef = useRef<HTMLDivElement>(null);
-  const isOnScreen = useElementOnScreen(contactRef);
+  const isOnScreen = useElementOnScreen(headerRef, '-200px');
 
   const [email, setEmail] = useState('');
   const [emailValidation, setEmailValidation] = useState(' ');
@@ -90,7 +89,7 @@ function Contact() {
 
   return (
     // book style section separator
-    <section className='contact' id='contact' aria-labelledby='contact__title' ref={contactRef}>
+    <section className='contact' id='contact' aria-labelledby='contact__title'>
       <div className='custom-shape-divider-top-1680975773' aria-hidden='true'>
         <svg
           data-name='Layer 1'
