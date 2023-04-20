@@ -43,7 +43,9 @@
   width: 100%;
   overflow: hidden;
   line-height: 0;
-  transform: rotate(180deg);
+
+  // translateY: fix gap that appears on random viewport sizes
+  transform: rotate(180deg) translateY(1px);
 }
 
 .custom-shape-divider-top-1681930915 svg {

@@ -159,7 +159,11 @@
   width: 100%;
   overflow: hidden;
   line-height: 0;
-  transform: rotate(180deg);
+
+  // translateY: fix gap that appears on random viewport sizes
+  // 1/2 pixel of the darker transparent overlap is less noticeable
+  // than 1/2 pixel gap of nothing
+  transform: rotate(180deg) translateY(0.5px);
 }
 
 .custom-shape-divider-top-1680975773 svg {

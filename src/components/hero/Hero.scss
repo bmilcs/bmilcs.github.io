@@ -107,6 +107,9 @@
   width: 100%;
   overflow: hidden;
   line-height: 0;
+
+  // translateY: fix gap that appears on random viewport sizes
+  transform: translateY(1px);
 }
 
 .custom-shape-divider-bottom-1680894835 svg {
