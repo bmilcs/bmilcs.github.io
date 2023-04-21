@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { KeyboardEvent, useEffect, useRef, useState } from 'react';
 import { TScreenshot } from '../../data/projects';
 import './Carousel.scss';
 
@@ -10,7 +10,7 @@ type TProps = {
 function Carousel({ imageArray, isTransitionDone }: TProps) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [scrollXPosition, setScrollXPosition] = useState(0);
-  const carouselRef = useRef<HTMLButtonElement>(null);
+  const carouselRef = useRef<HTMLDivElement>(null);
 
   // despite having no visible scrollbar, users can use enter/space/arrow keys to
   // cycle images when the carousel is focused. this keeps currentImageIndex
@@ -65,9 +65,16 @@ function Carousel({ imageArray, isTransitionDone }: TProps) {
     });
   };
 
+  const onKeyPress = (e: KeyboardEvent<HTMLDivElement>) => {
+    const enterOrSpace = e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar';
+    if (enterOrSpace) {
+      e.preventDefault();
+      cycleImage();
+    }
+  };
+
   return (
     <div className='carousel'>
-      {/* <div className='carousel__wrapper'> */}
       {/* single image: <img>, no interactivity */}
       {imageArray.length === 1 &&
         imageArray.map(({ url, alt }, idx) => {
@@ -77,10 +84,18 @@ function Carousel({ imageArray, isTransitionDone }: TProps) {
       {/* multiple images: interactive carousel */}
       {imageArray.length > 1 && (
         <>
-          <button
+          <div
             className='carousel__images-container'
             ref={carouselRef}
-            onClick={() => cycleImage()}
+            role='button'
+            tabIndex={0}
+            aria-label='image carousel'
+            onKeyDown={(e) => {
+              onKeyPress(e);
+            }}
+            onClick={() => {
+              cycleImage();
+            }}
             onScroll={(e) => {
               const ele = e.target as HTMLDivElement;
               const xPosition = ele.scrollLeft;
@@ -91,12 +106,11 @@ function Carousel({ imageArray, isTransitionDone }: TProps) {
               const xPosition = ele.scrollLeft;
               setScrollXPosition(xPosition);
             }}
-            aria-label='image carousel'
           >
             {imageArray.map(({ url, alt }) => {
               return <img src={url} alt={`${alt}`} key={`${url}-image`} />;
             })}
-          </button>
+          </div>
 
           {/* round navigation buttons */}
           <div className='carousel__bottom-buttons'>
@@ -117,7 +131,6 @@ function Carousel({ imageArray, isTransitionDone }: TProps) {
           </div>
         </>
       )}
-      {/* </div> */}
     </div>
   );
 }
