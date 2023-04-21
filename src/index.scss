@@ -52,8 +52,8 @@
   --transition-short: 0.25s;
 
   --fs-responsive-baseline: clamp(0.9rem, 3.15vw, 1rem);
-  --fs-responsive-small: calc(calc(--fs-responsive-baseline) * 0.9);
-  --fs-responsive-large: clamp(0.9rem, 3.15vw, 1.1rem);
+  --fs-responsive-small: clamp(0.85rem, 2vw, 0.9rem);
+  --fs-responsive-large: clamp(1rem, 3.15vw, 1.1rem);
 
   --fs-section-header: clamp(2rem, 8vw, 3rem);
 
@@ -81,6 +81,14 @@ html {
 
 h1 {
   font-weight: var(--fw-xbold);
+}
+
+h2 {
+  font-size: clamp(2rem, 8vw, 3rem);
+}
+
+h3 {
+  font-size: clamp(1.5rem, 5vw, 2rem);
 }
 
 *,

@@ -153,9 +153,9 @@ function Project({ data, number }: TProps) {
             data.description.map(({ type, value }) => {
               if (type === 'header')
                 return (
-                  <h4 className='project__text-header' key={value}>
+                  <p className='project__text-header' key={value}>
                     {value}
-                  </h4>
+                  </p>
                 );
               else
                 return (

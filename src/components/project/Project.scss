@@ -43,7 +43,6 @@
     position: relative;
     z-index: 2;
 
-    font-size: clamp(1.5rem, 5vw, 2rem);
     font-weight: var(--fw-xbold);
     text-transform: uppercase;
 
@@ -135,10 +134,9 @@
   }
 
   &__text {
-    font-size: clamp(0.9rem, 2vw, 1rem);
-
     &-header {
       margin-bottom: var(--header-gap);
+      font-family: var(--ff-accent);
       text-transform: uppercase;
       letter-spacing: 2px;
       font-weight: var(--fw-thin);
