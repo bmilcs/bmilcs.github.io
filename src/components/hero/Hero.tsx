@@ -31,8 +31,8 @@ function Hero() {
             >
               <LinkedIn />
             </a>
-            <a href='#portfolio'>
-              <Button type='outline'>My Portfolio</Button>
+            <a href='#about'>
+              <Button type='outline'>About Me</Button>
             </a>
           </div>
         </div>
