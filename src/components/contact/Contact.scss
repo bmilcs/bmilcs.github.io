@@ -12,13 +12,13 @@
 
   &__header {
     opacity: 0;
-    transform: translateY(30%);
+    transform: translateX(-30%);
 
     transition: opacity 1.25s ease-out, transform 0.5s ease-out;
 
     &.animate-in {
       opacity: 1;
-      transform: translateY(0);
+      transform: translateX(0);
     }
 
     h2 {
@@ -62,13 +62,13 @@
     border-radius: var(--border-radius-200);
 
     opacity: 0;
-    transform: translateX(-30%);
+    transform: translateY(30%);
 
-    transition: opacity 1.25s ease-out, transform 0.5s ease-out;
+    transition: opacity 1.25s ease-out, transform 0.75s ease-out;
 
     &.animate-in {
       opacity: 1;
-      transform: translateX(0);
+      transform: translateY(0);
     }
 
     .input-wrapper {
