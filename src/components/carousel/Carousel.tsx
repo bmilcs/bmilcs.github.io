@@ -30,7 +30,7 @@ function Carousel({ imageArray, isTransitionDone }: TProps) {
       if (currentImageIndex === newImageIndex) return;
 
       setCurrentImageIndex(newImageIndex);
-    }, 100);
+    }, 250);
 
     return () => clearTimeout(delayUntilScrollingStopped);
   }, [scrollXPosition]);
