@@ -65,7 +65,7 @@ function About() {
               containers, I&apos;ve honed my ability to learn and adopt new technology. As I pursue
               my dream of becoming a professional developer, I&apos;ve been devoting all my free
               time to learning modern web development through the Odin Project (
-              <a href='https://www.theodinproject.com/' target='_blank' rel='noreferrer'>
+              <a href='https://www.github.com/bmilcs/odin-project' target='_blank' rel='noreferrer'>
                 view my progress
               </a>
               ). I&apos;m excited to put my expertise to work and{' '}
