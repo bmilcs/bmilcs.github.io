@@ -47,6 +47,8 @@
     display: grid;
     place-items: center;
 
+    margin-top: 2rem;
+
     background: none;
     border: 0;
 
@@ -61,6 +63,12 @@
       background: var(--clr-neutral-800);
 
       animation: pulseScale 1.25s infinite;
+    }
+
+    &-label {
+      margin-block: 0.75rem;
+      color: var(--clr-neutral-500);
+      font-size: var(--fs-responsive-small);
     }
   }
 

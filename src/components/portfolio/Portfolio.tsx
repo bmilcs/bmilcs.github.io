@@ -54,6 +54,10 @@ function Portfolio() {
           {renderAllProjects ? <Minus /> : <Plus />}
         </button>
 
+        <p className='portfolio__view-more-label'>
+          {renderAllProjects ? 'Hide Extra Projects' : 'View All Projects'}
+        </p>
+
         {/* remainder of projects */}
         {renderAllProjects && (
           <div className='portfolio__extra-projects'>
