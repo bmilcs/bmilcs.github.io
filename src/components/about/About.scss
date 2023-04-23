@@ -10,7 +10,7 @@
     grid-template-columns: 1.5fr 1fr;
     gap: var(--about-gap);
 
-    @media (width < 950px) {
+    @media (max-width: 950px) {
       grid-template-columns: 1fr;
     }
   }

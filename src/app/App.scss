@@ -4,7 +4,7 @@
   margin-inline: auto;
   padding-inline: min(10vw, 3.5rem);
 
-  @media (width < 600px) {
+  @media (max-width: 600px) {
     padding: 1.5rem;
   }
 }
