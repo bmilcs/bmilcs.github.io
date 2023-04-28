@@ -145,13 +145,13 @@ The useState hook handles the sending & sent state, letting the user know when t
 
 ![Hero](screenshots/hero.png)
 
-> Portfolio
-
-![Portfolio](screenshots/portfolio.png)
-
 > About
 
 ![About](screenshots/about.png)
+
+> Portfolio
+
+![Portfolio](screenshots/portfolio.png)
 
 > Contact
 
@@ -165,13 +165,13 @@ The useState hook handles the sending & sent state, letting the user know when t
 
 ![Mobile Hero](screenshots/mobile_hero.png)
 
-> Mobile Portfolio
-
-![Mobile Portfolio](screenshots/mobile_portfolio.png)
-
 > Mobile About
 
 ![Mobile About](screenshots/mobile_about.png)
+
+> Mobile Portfolio
+
+![Mobile Portfolio](screenshots/mobile_portfolio.png)
 
 > Mobile Contact
 
