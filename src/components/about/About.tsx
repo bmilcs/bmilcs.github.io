@@ -52,7 +52,7 @@ function About() {
   ];
 
   return (
-    <section className='about' id='about' aria-labelledby='about__title'>
+    <section className='about' aria-labelledby='about__title'>
       <div className='column'>
         <div className='about__content' ref={aboutRef}>
           <div className='about__text' ref={leftColumnRef}>
