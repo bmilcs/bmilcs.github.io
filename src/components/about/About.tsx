@@ -107,8 +107,8 @@ function About() {
             </p>
             <p>
               I <strong>cannot wait</strong> to apply my problem solving skills and love of learning
-              toward the completion of your business objectives. I am ready to hit the ground cell
-              phones running so let&apos;s get started!
+              toward the completion of your business objectives. I am ready to hit the ground
+              running so let&apos;s get started!
             </p>
           </div>
 
