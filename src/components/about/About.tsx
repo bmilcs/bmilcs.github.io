@@ -76,23 +76,23 @@ function About() {
               modified cell phones and video game consoles . I&apos;ve spun up countless Linux
               virtual machines on my homelab server, tinkered with Raspberry Pis, wired my house
               with Cat6A ethernet cable and deployed enterprise level networking equipment. To top
-              it off, I&apos;ve used{' '}
+              it off, I used{' '}
               <a href='https://github.com/bmilcs/dotfiles-old' target='_blank' rel='noreferrer'>
                 ArchLinux
               </a>{' '}
               as my primary operating system for 6 months, obsessing over every detail of my
-              workstation.
+              computer.
             </p>
 
             <p>
-              As time went on, I found myself drawn to writing BASH scripts to automate tasks on my
-              Linux workstation and AutoHotkey scripts to improve my performance in my day job. I
-              realized my true love of coding and knew it&apos;s what I want to do for the rest of
-              my life.
+              As time went on, I found myself writing BASH scripts to automate tasks on my Linux
+              machines and AutoHotkey scripts to improve my work performance. My passion for coding
+              couldn&apos;t be delegated to after hours any longer and knew I had to make this my
+              career.
             </p>
 
             <p>
-              In the summer of 2022, I set a goal to become a professional web developer. Since
+              In the summer of 2022, I set my goal to become a professional web developer. Since
               then, I have devoted <em>every free minute of my life</em> to the pursuit of my dream.
               With The Odin Project (
               <a href='https://www.github.com/bmilcs/odin-project' target='_blank' rel='noreferrer'>
@@ -107,8 +107,8 @@ function About() {
             </p>
             <p>
               I <strong>cannot wait</strong> to apply my problem solving skills and love of learning
-              toward the completion of your business objectives. I am ready to hit the ground
-              running so let&apos;s get started!
+              toward the completion of your business objectives. I am ready to hit the ground cell
+              phones running so let&apos;s get started!
             </p>
           </div>
 
