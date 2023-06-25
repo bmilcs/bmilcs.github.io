@@ -67,7 +67,7 @@ function About() {
             <h2 id='about__title'>About Me</h2>
             <p>
               Hey there, I&apos;m Bryan and I like to build things. My web development journey began
-              as a freshman in high school, and I&apos;ve been hooked on programming ever since.
+              as a freshman in high school, and I&apos;ve been hooked on technology ever since.
             </p>
 
             <p>
