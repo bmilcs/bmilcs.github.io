@@ -11,7 +11,7 @@ function Hero() {
           <h4>Hey there :)</h4>
           <h2>I&apos;m Bryan Miller</h2>
           <h3>
-            A Frontend <span>Web Developer</span>
+            A Full Stack <span>Web Developer</span>
           </h3>
 
           <div className='hero__cta'>
