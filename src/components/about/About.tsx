@@ -92,9 +92,9 @@ function About() {
             </p>
 
             <p>
-              In the summer of 2022, I set my goal to become a professional web developer. Since
-              then, I have devoted <em>every free minute of my life</em> to the pursuit of my dream.
-              With The Odin Project (
+              In the summer of 2022, I set a career goal to become a professional web developer.
+              Since then, I have devoted <em>every free minute of my life</em> to the pursuit of my
+              dream. With The Odin Project (
               <a href='https://www.github.com/bmilcs/odin-project' target='_blank' rel='noreferrer'>
                 view my progress here
               </a>
