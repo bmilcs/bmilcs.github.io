@@ -5,7 +5,7 @@ import './Contact.scss';
 function Contact() {
   const headerRef = useRef<HTMLDivElement>(null);
   const formRef = useRef<HTMLFormElement>(null);
-  const isOnScreen = useElementOnScreen(headerRef, '-200px');
+  const isOnScreen = useElementOnScreen(headerRef, '-100px');
 
   const [email, setEmail] = useState('');
   const [emailValidation, setEmailValidation] = useState(' ');
