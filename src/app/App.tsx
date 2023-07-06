@@ -13,14 +13,14 @@ function App() {
 
   return (
     // <WindowContext.Provider value={{ height, width }}>
-    <div className='App'>
+    <>
       <Header />
       <Hero />
       <About />
       <Portfolio />
       <Contact />
       <Footer />
-    </div>
+    </>
     // </WindowContext.Provider>
   );
 }
