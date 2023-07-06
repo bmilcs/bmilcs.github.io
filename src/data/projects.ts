@@ -113,7 +113,7 @@ const PROJECTS: IProject[] = [
       {
         type: 'p',
         value:
-          'Users can add dynamically new comedians to the site by using the search bar. The initial search results page shows existing comedians and a list of people from the TMDB People API. To prevent actors from being added, extra API calls are issued to verify that the person has content with the TMDB standup keyword.',
+          'Users can dynamically add new comedians to the site by using the search bar. The initial search results page shows existing comedians and a list of people from the TMDB People API. To prevent actors from being added, extra API calls are issued to verify that the person has content with the TMDB standup keyword.',
       },
       {
         type: 'p',
