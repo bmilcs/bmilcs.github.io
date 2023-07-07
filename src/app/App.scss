@@ -126,6 +126,17 @@
   }
 }
 
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    // transform: translateX(-100vh);
+    display: none;
+  }
+}
+
 #root {
   position: relative;
 

@@ -1,5 +1,5 @@
 header {
-  display: grid;
+  display: flex;
   grid-template-columns: 1fr 1fr;
   justify-content: space-between;
   align-items: center;
@@ -12,24 +12,39 @@ header {
     --padding: 1rem;
     --link-color: var(--clr-header);
 
-    ul {
-      display: flex;
-      justify-content: flex-end;
-      gap: 2vw;
+    background: var(--clr-neutral-900-t);
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    backdrop-filter: blur(10px);
+    display: grid;
+    place-items: center;
+    text-align: center;
 
-      font-size: clamp(0.8rem, 1vw, 1rem);
+    ul {
       font-weight: var(--fw-normal);
       text-transform: uppercase;
       letter-spacing: 2px;
 
+      font-size: 2rem;
       color: var(--link-color);
     }
 
     li {
-      position: relative;
-      padding-block: var(--padding);
+      margin-bottom: 2rem;
     }
 
+    &.nav__open {
+      display: grid;
+      opacity: 0;
+      animation: fadeInOpacity 0.35s linear forwards;
+    }
+
+    &.nav__closed {
+      animation: fadeOut 0.35s linear forwards;
+    }
+
+    // fancy hover effect
     a {
       transition: transform 0.2s ease;
       padding-block: var(--padding);
@@ -50,10 +65,65 @@ header {
         width: 100%;
       }
     }
+
+    // full screen navigation
+    @media (min-width: 500px) {
+      position: static;
+      backdrop-filter: none;
+      background: none;
+
+      ul {
+        display: flex;
+        justify-content: flex-end;
+        gap: 2vw;
+
+        font-size: clamp(0.8rem, 1vw, 1rem);
+      }
+
+      li {
+        position: relative;
+        margin-bottom: 0;
+        padding-block: var(--padding);
+      }
+
+      &.nav__closed,
+      &.nav__open {
+        display: block;
+        opacity: 1;
+        animation: none;
+      }
+    }
+  }
+
+  .hamburger-menu {
+    background: none;
+    border: 0;
+    z-index: 11;
+
+    &:focus {
+      outline: var(--a11y-outline);
+    }
+
+    &__sticky {
+      position: fixed;
+      z-index: 20;
+      bottom: -4px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--clr-neutral-900-t);
+      backdrop-filter: blur(12px);
+      border-radius: var(--border-radius-100);
+      animation: fadeInFromLeft 0.35s linear forwards;
+    }
+
+    @media (min-width: 500px) {
+      display: none;
+    }
   }
 
   svg {
-    max-width: 50px;
+    z-index: 11;
+    width: 40px;
     transition: transform 0.5s ease-in-out;
 
     &:hover {
