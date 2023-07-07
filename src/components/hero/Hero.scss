@@ -1,6 +1,6 @@
 .hero {
   --spacer: 1.5vh;
-  --timer: 1s;
+  --timer: 0.5s;
 
   position: relative;
 
@@ -11,43 +11,27 @@
   place-items: center;
 
   &__text {
+    opacity: 0;
+    animation: fadeInFromBottom var(--timer) ease-out 0.5s normal forwards;
     transform: translateY(-10vh);
-
-    animation: fadeInFromLeft var(--timer) cubic-bezier(0, 1.32, 1, 1) 1 normal forwards;
-
-    // Hey there :)
-    h4 {
-      font-family: var(--ff-main);
-      font-weight: var(--fw-thin);
-      font-size: clamp(0.9rem, 2vw, 1.5rem);
-      color: var(--clr-neutral-400);
-      letter-spacing: 2px;
-
-      transform: rotate(-4deg) translateX(-5vw);
-
-      @media (max-width: 400px) {
-        transform: rotate(-4deg) translateX(0);
-      }
-
-      margin-bottom: calc(var(--spacer) * 5);
-    }
 
     // Bryan Miller
     h2 {
       margin-bottom: calc(var(--spacer) * 0.5);
 
       font-weight: var(--fw-xbold);
-      font-size: clamp(2.5rem, 8vw, 6rem);
+      font-size: clamp(2.5rem, 10vw, 6rem);
 
       color: var(--clr-neutral-200);
     }
 
-    // A Frontend
+    // Full Stack
     h3 {
       margin-bottom: calc(var(--spacer) * 5);
 
       font-weight: var(--fw-bold);
-      font-size: clamp(1.25rem, 4vw, 3rem);
+      letter-spacing: 0.1px;
+      font-size: clamp(1.25rem, 6vw, 3rem);
       color: var(--clr-neutral-500);
 
       // Web Developer
@@ -75,11 +59,13 @@
   }
 
   &__cta {
-    margin-top: 1rem;
+    margin-top: 2rem;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: flex-start;
     gap: 1rem;
+    opacity: 0;
+    animation: fadeInFromLeft var(--timer) ease-out 0.75s normal forwards;
 
     a {
       font-family: var(--ff-accent);

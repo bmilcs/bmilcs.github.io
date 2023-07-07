@@ -8,21 +8,12 @@ function Hero() {
     <section className='hero' aria-label='hero with github & linkedin links'>
       <div className='hero-content column centered_grid full_height'>
         <div className='hero__text'>
-          <h4>Hey there :)</h4>
-          <h2>I&apos;m Bryan Miller</h2>
+          <h2>Bryan Miller</h2>
           <h3>
-            A Full Stack <span>Web Developer</span>
+            Full Stack <span>Web Developer</span>
           </h3>
 
           <div className='hero__cta'>
-            <a
-              href='https://github.com/bmilcs'
-              target='_blank'
-              rel='noreferrer'
-              aria-label='My Github Profile'
-            >
-              <Github />
-            </a>
             <a
               href='https://www.linkedin.com/in/bryan-michael-miller/'
               target='_blank'
@@ -30,6 +21,14 @@ function Hero() {
               aria-label='My LinkedIn Profile'
             >
               <LinkedIn />
+            </a>
+            <a
+              href='https://github.com/bmilcs'
+              target='_blank'
+              rel='noreferrer'
+              aria-label='My Github Profile'
+            >
+              <Github />
             </a>
             <a href='#about'>
               <Button type='outline'>About Me</Button>

@@ -91,7 +91,7 @@
 @keyframes fadeInFromLeft {
   0% {
     opacity: 0;
-    transform: translate(-100vw, -10vh);
+    transform: translate(-50vw);
   }
   30% {
     opacity: 0.1;
@@ -112,6 +112,17 @@
 
   100% {
     opacity: 1;
+  }
+}
+
+@keyframes fadeInFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(10vh);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-10vh);
   }
 }
 
