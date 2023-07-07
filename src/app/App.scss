@@ -129,10 +129,11 @@
 @keyframes fadeOut {
   0% {
     opacity: 1;
+    height: 100%;
   }
   100% {
     opacity: 0;
-    // transform: translateX(-100vh);
+    height: 0;
     display: none;
   }
 }
