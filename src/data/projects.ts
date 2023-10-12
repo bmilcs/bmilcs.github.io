@@ -22,6 +22,14 @@ import malachiConstantHomeV1 from '../assets/early_clients/mc-v1.0.jpg';
 import nohoPetsittersDog from '../assets/early_clients/noho-dog-services.jpg';
 import nohoPetsittersHome from '../assets/early_clients/noho-home.jpg';
 import etchASketchDrawing from '../assets/etch_a_sketch/drawing.jpg';
+import garnishedEventForm from '../assets/garnished/event_form.jpg';
+import garnishedEventForm2 from '../assets/garnished/event_form_2.jpg';
+import garnishedGallery from '../assets/garnished/gallery.jpg';
+import garnishedHome from '../assets/garnished/home.jpg';
+import garnishedHomeBottom from '../assets/garnished/home_bottom.jpg';
+import garnishedMenus from '../assets/garnished/seasonal_menus.jpg';
+import garnishedServices from '../assets/garnished/services_footer.jpg';
+import garnishedDashboard from '../assets/garnished/user_dashboard.jpg';
 import libraryAdd from '../assets/library/add.jpg';
 import libraryEdit from '../assets/library/edit.jpg';
 import libraryHome from '../assets/library/home.jpg';
@@ -77,9 +85,71 @@ type TTech =
   | 'jest'
   | 'eslint'
   | 'babel'
-  | 'webpack';
+  | 'webpack'
+  | 'express'
+  | 'mongodb'
+  | 'mongoose'
+  | 'bash'
+  | 'playwright'
+  | 'mocha'
+  | 'chai'
+  | 'jwt';
 
 const PROJECTS: IProject[] = [
+  {
+    title: 'garnished events',
+    featured: true,
+    links: {
+      live: 'https://garnished.events',
+      repo: 'https://github.com/bmilcs/garnished',
+    },
+    techIcons: [
+      'react',
+      'express',
+      'mongodb',
+      'node',
+      'typescript',
+      'mongoose',
+      'bash',
+      'sass',
+      'jwt',
+    ],
+    screenshots: [
+      { url: garnishedHome, alt: 'Garnished Events Home' },
+      { url: garnishedHomeBottom, alt: 'Garnished Events Home' },
+      { url: garnishedGallery, alt: 'Garnished Events Gallery' },
+      { url: garnishedServices, alt: 'Garnished Events Services' },
+      { url: garnishedMenus, alt: 'Garnished Events Seasonal Menus' },
+      { url: garnishedDashboard, alt: 'Garnished Events User Dashboard' },
+      { url: garnishedEventForm, alt: 'Garnished Events Event Form' },
+      { url: garnishedEventForm2, alt: 'Garnished Events Event Form' },
+    ],
+    description: [
+      { type: 'header', value: 'Freelance Project' },
+      {
+        type: 'p',
+        value:
+          'Garnished Events is a full stack MERN application created for a mobile bar business. The requirements included a landing page, service listing, seasonal menu PDFs, photo gallery, contact form and event estimates with user authentication. Their guidelines also included a color palette, typography and logo.',
+      },
+      {
+        type: 'p',
+        value:
+          'Working directly with the clients was a great experience and I was able to deliver a product that exceeded their expectations. I was responsible for the entire project, from design to deployment. The site is fully responsive and accessible.',
+      },
+      { type: 'header', value: 'The Tech Stack' },
+      {
+        type: 'p',
+        value:
+          'On the frontend, React, TypeScript, Vite, Sass, Framer Motion and Playwright are the star players. Responsive imagery and performance were a main focus. Using ImageMagick and BASH scripts, I automated the process of resizing and compressing images for the web, as well as the generation of an index file that organizes and exports image objects for consumption throughout the app. React-PDF was used to display their Seasonal Menus directly on the page. A combination of baseline element styles, utility classes and SCSS modules were used for styling. Playwright was used for end to end tests, covering user authentication and form submissions. Google Analytics was added to improve future iterations through a data-driven approach.',
+      },
+      {
+        type: 'p',
+        value:
+          'The backend is powered by Node, Express, MongoDB via Mongoose, and TypeScript. For authentication, JSON Web Tokens via HttpOnly cookies, CORS and custom middleware were used. Email notifications were accomplished with Node Mailer. The API is fully tested with Supertest, Mocha and Chai. The database is hosted on MongoDB Atlas and the API was deployed to Fly.io with SSL encryption.',
+      },
+    ],
+  },
+
   {
     title: 'the comedy db',
     featured: true,
