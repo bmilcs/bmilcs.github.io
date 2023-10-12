@@ -1,12 +1,19 @@
 import { ReactNode, useEffect, useRef, useState } from 'react';
 import Babel from '../../assets/components/Babel';
+import Bash from '../../assets/components/Bash';
 import CSS from '../../assets/components/CSS';
+import Chai from '../../assets/components/Chai';
 import ESLint from '../../assets/components/ESLint';
+import Express from '../../assets/components/Express';
 import Firebase from '../../assets/components/Firebase';
 import HTML from '../../assets/components/HTML';
+import JWT from '../../assets/components/JWT';
 import JavaScript from '../../assets/components/JavaScript';
 import Jest from '../../assets/components/Jest';
+import MongoDB from '../../assets/components/MongoDB';
+import Mongoose from '../../assets/components/Mongoose';
 import NodeJS from '../../assets/components/NodeJS';
+import Playwright from '../../assets/components/Playwright';
 import React from '../../assets/components/React';
 import Redux from '../../assets/components/Redux';
 import Sass from '../../assets/components/Sass';
@@ -135,6 +142,38 @@ function Project({ data, number }: TProps) {
               case 'eslint':
                 techComponent = <ESLint />;
                 tooltip = 'ESLint';
+                break;
+              case 'express':
+                techComponent = <Express />;
+                tooltip = 'Express';
+                break;
+              case 'mongodb':
+                techComponent = <MongoDB />;
+                tooltip = 'MongoDB';
+                break;
+              case 'mongoose':
+                techComponent = <Mongoose />;
+                tooltip = 'Mongoose';
+                break;
+              case 'bash':
+                techComponent = <Bash />;
+                tooltip = 'Bash';
+                break;
+              case 'chai':
+                techComponent = <Chai />;
+                tooltip = 'Chai';
+                break;
+              case 'mocha':
+                techComponent = <Chai />;
+                tooltip = 'Mocha';
+                break;
+              case 'jwt':
+                techComponent = <JWT />;
+                tooltip = 'JSON Web Tokens';
+                break;
+              case 'playwright':
+                techComponent = <Playwright />;
+                tooltip = 'Playwright';
                 break;
             }
 
