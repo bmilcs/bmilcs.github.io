@@ -78,7 +78,7 @@ function Carousel({ imageArray, isTransitionDone }: TProps) {
       {/* single image: <img>, no interactivity */}
       {imageArray.length === 1 &&
         imageArray.map(({ url, alt }, idx) => {
-          return <img src={url} alt={`${alt}`} key={`${url}${idx}`} />;
+          return <img src={url} alt={`${alt}`} key={`${url}${idx}`} loading='lazy' />;
         })}
 
       {/* multiple images: interactive carousel */}
