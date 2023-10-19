@@ -196,7 +196,7 @@ const PROJECTS: IProject[] = [
 
   {
     title: 'where is waldo?',
-    featured: true,
+    featured: false,
     links: {
       live: 'https://bmilcs.com/odin-wheres-waldo/',
       repo: 'https://github.com/bmilcs/odin-wheres-waldo',
@@ -227,7 +227,7 @@ const PROJECTS: IProject[] = [
 
   {
     title: 'shopping cart',
-    featured: true,
+    featured: false,
     links: {
       live: 'https://bmilcs.github.io/odin-shopping-cart/',
       repo: 'https://github.com/bmilcs/odin-shopping-cart',
@@ -303,7 +303,7 @@ const PROJECTS: IProject[] = [
 
   {
     title: 'battleship',
-    featured: true,
+    featured: false,
     links: {
       live: 'https://bmilcs.com/odin-battleship/',
       repo: 'https://github.com/bmilcs/odin-battleship/',
@@ -555,7 +555,7 @@ const PROJECTS: IProject[] = [
 
   {
     title: 'Early 2000 Clients',
-    featured: true,
+    featured: false,
     techIcons: ['javascript', 'css', 'html'],
     screenshots: [
       { url: kashetaPowerEquipmentHome, alt: 'Kasheta Power Equipment Home' },
@@ -576,7 +576,7 @@ const PROJECTS: IProject[] = [
       {
         type: 'p',
         value:
-          'My web development experience dates back to 2001 as a freshman in high school. I was responsible for 5 local band web sites. These projects were created with Adobe Photoshop, HTML, CSS and JavaScript.',
+          'My web development journey began in 2000 as a freshman in high school. I was responsible for 5 local band web sites. These projects were created with Adobe Photoshop, HTML, CSS and JavaScript.',
       },
       {
         type: 'p',
