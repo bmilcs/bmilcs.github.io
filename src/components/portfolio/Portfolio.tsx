@@ -45,18 +45,17 @@ function Portfolio() {
 
         <button
           className='portfolio__view-more'
-          // data-tooltip='View All Projects'
           onClick={() => {
             setRenderAllProjects((prev) => !prev);
           }}
           aria-label={`${renderAllProjects ? 'Hide Extra Projects' : 'View All Projects'}`}
         >
           {renderAllProjects ? <Minus /> : <Plus />}
-        </button>
 
-        <p className='portfolio__view-more-label'>
-          {renderAllProjects ? 'Hide Extra Projects' : 'View All Projects'}
-        </p>
+          <p className='portfolio__view-more-label'>
+            {renderAllProjects ? 'Hide Extra Projects' : 'View All Projects'}
+          </p>
+        </button>
 
         {/* remainder of projects */}
         {renderAllProjects && (
