@@ -4,9 +4,26 @@ import Button from '../button/Button';
 import Header from '../header/Header';
 import './Hero.scss';
 
-function Hero() {
+// the background image is progressively loaded from the App.tsx file.
+// once loaded, it is passed to this component as a prop, preventing
+// the component from rendering until the image is loaded
+
+function Hero({ backgroundImg }: { backgroundImg: string }) {
   return (
     <section className='hero-with-header'>
+      <div
+        className='hero__background-layer'
+        style={{
+          backgroundImage: `url(${backgroundImg})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center center',
+          backgroundRepeat: 'no-repeat',
+          opacity: 0.5,
+          inset: 0,
+          zIndex: -1,
+          position: 'absolute',
+        }}
+      />
       <Header />
       <section className='hero' aria-label='hero with github & linkedin links'>
         <div className='hero-content column centered_grid full_height'>

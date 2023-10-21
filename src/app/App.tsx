@@ -1,25 +1,27 @@
+import heroBG from '../assets/misc/hero-bg.jpg';
 import About from '../components/about/About';
 import Contact from '../components/contact/Contact';
 import Footer from '../components/footer/Footer';
 import Hero from '../components/hero/Hero';
 import Portfolio from '../components/portfolio/Portfolio';
+import { useProgressiveImage } from '../hooks/useProgressiveImage';
 import './App.scss';
 
-// export const WindowContext = createContext({ height: 0, width: 0 });
-
 function App() {
-  // const { height, width } = useWindowDimensions();
+  const heroBackground = useProgressiveImage(heroBG);
+
+  if (!heroBackground) {
+    return null;
+  }
 
   return (
-    // <WindowContext.Provider value={{ height, width }}>
     <>
-      <Hero />
+      <Hero backgroundImg={heroBackground} />
       <About />
       <Portfolio />
       <Contact />
       <Footer />
     </>
-    // </WindowContext.Provider>
   );
 }
 
