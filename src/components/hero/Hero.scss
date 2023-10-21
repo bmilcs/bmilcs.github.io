@@ -1,10 +1,32 @@
+.hero-with-header {
+  position: relative;
+
+  // add slight blur affect to the textured background behind the main background svg
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    backdrop-filter: blur(4px);
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    opacity: 30%;
+    background: url('/src/assets/misc/hero-bg.jpg') no-repeat center center/cover;
+  }
+}
+
 .hero {
   --spacer: 1.5vh;
   --timer: 0.5s;
-
   position: relative;
 
   color: var(--clr-neutral-200);
+  text-align: center;
 
   display: grid;
   grid-template-columns: 1fr;
@@ -12,27 +34,29 @@
 
   &__text {
     opacity: 0;
-    animation: fadeInFromBottom var(--timer) ease-out 0.5s normal forwards;
+    animation: fadeInFromBottom var(--timer) ease-in-out 0.5s normal forwards;
     transform: translateY(-10vh);
 
     // Bryan Miller
     h2 {
-      margin-bottom: calc(var(--spacer) * 0.5);
-
       font-weight: var(--fw-xbold);
-      font-size: clamp(2.5rem, 10vw, 6rem);
-
+      font-size: clamp(2.5rem, 10vw, 10rem);
+      text-transform: uppercase;
       color: var(--clr-neutral-200);
+      letter-spacing: -1px;
     }
 
     // Full Stack
     h3 {
       margin-bottom: calc(var(--spacer) * 5);
 
-      font-weight: var(--fw-bold);
-      letter-spacing: 0.1px;
-      font-size: clamp(1.25rem, 6vw, 3rem);
-      color: var(--clr-neutral-500);
+      font-size: clamp(1rem, 3vw, 2rem);
+      color: var(--clr-neutral-300);
+      font-weight: normal;
+      opacity: 80%;
+
+      text-transform: uppercase;
+      letter-spacing: 2px;
 
       // Web Developer
       span {
@@ -46,7 +70,7 @@
           bottom: max(calc(-4px - 1.2vw), -16px);
           right: 12.5%;
 
-          height: min(1.5vw, 12px);
+          height: min(1vw, 8px);
           width: 75%;
 
           background-color: var(--clr-primary-100);
@@ -62,7 +86,7 @@
     margin-top: 2rem;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     gap: 1rem;
     opacity: 0;
     animation: fadeInFromLeft var(--timer) ease-out 0.75s normal forwards;
@@ -74,7 +98,7 @@
 
     svg {
       aspect-ratio: 1/1;
-      width: min(7vw, 2.5rem);
+      width: min(10vw, 4rem);
       color: var(--clr-primary-100);
 
       transition: transform var(--transition-short) ease-in-out;
