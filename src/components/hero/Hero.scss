@@ -23,10 +23,13 @@
   grid-template-columns: 1fr;
   place-items: center;
 
-  &__text {
-    opacity: 0;
-    animation: fadeInFromBottom var(--timer) ease-in-out 0s normal forwards;
+  &__vertical-position-adjustment {
+    animation: fadeInFromBottom var(--timer) ease-out 0s normal forwards;
     transform: translateY(-10vh);
+  }
+
+  &__text {
+    z-index: 3;
 
     // Bryan Miller
     h2 {
