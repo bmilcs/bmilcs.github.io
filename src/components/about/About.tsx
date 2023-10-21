@@ -66,29 +66,11 @@ function About() {
           <div className='about__text' ref={leftColumnRef}>
             <h2 id='about__title'>About Me</h2>
             <p>
-              Hey there, I&apos;m Bryan and I like to build things. My web development journey began
-              as a freshman in high school, and I&apos;ve been hooked on technology ever since.
-            </p>
-
-            <p>
-              My true passions in life are learning and taking on challenges outside of my comfort
-              zone. Over the years, I&apos;ve built computers and mechanical keyboards. I&apos;ve
-              modified cell phones and video game consoles . I&apos;ve spun up countless Linux
-              virtual machines on my homelab server, tinkered with Raspberry Pis, wired my house
-              with Cat6A ethernet cable and deployed enterprise level networking equipment. To top
-              it off, I used{' '}
-              <a href='https://github.com/bmilcs/dotfiles-old' target='_blank' rel='noreferrer'>
-                ArchLinux
-              </a>{' '}
-              as my primary operating system for 6 months, obsessing over every detail of my
-              computer.
-            </p>
-
-            <p>
-              As time went on, I found myself writing BASH scripts to automate tasks on my Linux
-              machines and AutoHotkey scripts to improve my work performance. My passion for coding
-              couldn&apos;t be delegated to after hours any longer and knew I had to make this my
-              career.
+              Hey there, I&apos;m Bryan and I love to build things. My web development journey began
+              as a freshman in high school in the year 2000, and I&apos;ve been hooked on technology
+              ever since. Over time, I&apos;ve tackled freelance projects for several small
+              businesses, local bands and even acquired a degree in Information Technology & Web
+              Programming. However, I never felt like I was truly living up to my potential.
             </p>
 
             <p>
