@@ -30,6 +30,8 @@
 
   &__text {
     z-index: 3;
+    padding-block: var(--spacer);
+    overflow-y: hidden;
 
     // Bryan Miller
     h2 {

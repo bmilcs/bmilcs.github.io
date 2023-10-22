@@ -16,9 +16,11 @@ function Hero({ backgroundImg }: { backgroundImg: string }) {
   useEffect(function textParallaxEffect() {
     const handleScroll = () => {
       if (!heroTextDiv.current) return;
-
       const offset = window.scrollY;
-
+      const isOffScreen = offset > window.innerHeight;
+      // if the user has scrolled past the hero section, stop the animation
+      // this prevents overflow on both x & y axis
+      if (isOffScreen) return;
       heroTextDiv.current.style.transform = `translateY(${offset * 0.175}px)`;
       heroTextDiv.current.style.opacity = `${1 - offset * 0.0005}`;
       if (scrollY > 0) heroTextDiv.current.style.scale = `${1 + offset * 0.0005}`;
