@@ -13,7 +13,7 @@
 
 .hero {
   --spacer: 1.5vh;
-  --timer: 0.5s;
+  --timer: 0.75s;
   position: relative;
 
   color: var(--clr-neutral-200);
@@ -23,8 +23,11 @@
   grid-template-columns: 1fr;
   place-items: center;
 
+  overflow: hidden;
+
   &__vertical-position-adjustment {
-    animation: fadeInFromBottom var(--timer) ease-out 0s normal forwards;
+    opacity: 0%;
+    animation: fadeInOpacity var(--timer) ease-in-out 0.5s normal forwards;
     transform: translateY(-10vh);
   }
 
@@ -85,7 +88,7 @@
     justify-content: center;
     gap: 1rem;
     opacity: 0;
-    animation: fadeInFromLeft var(--timer) ease-out 0s normal forwards;
+    animation: fadeInOpacity var(--timer) ease-in-out 0.5s normal forwards;
 
     a {
       font-family: var(--ff-accent);
