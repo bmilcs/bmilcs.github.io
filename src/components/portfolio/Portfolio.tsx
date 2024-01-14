@@ -1,6 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
-import Minus from '../../assets/components/Minus';
-import Plus from '../../assets/components/Plus';
+import { useEffect, useRef } from 'react';
 import PROJECTS from '../../data/projects';
 import useElementOnScreen from '../../hooks/useElementOnScreen';
 import Project from '../project/Project';
@@ -8,7 +6,6 @@ import './Portfolio.scss';
 
 function Portfolio() {
   const titleRef = useRef<HTMLHeadingElement>(null);
-  const [renderAllProjects, setRenderAllProjects] = useState(false);
   const isOnScreen = useElementOnScreen(titleRef);
 
   useEffect(() => {
@@ -38,33 +35,10 @@ function Portfolio() {
           My Portfolio
         </h2>
 
-        {/* featured projects */}
-        {PROJECTS.filter((project) => project.featured).map((project, i) => {
+        {/* all projects */}
+        {PROJECTS.map((project, i) => {
           return <Project data={project} number={i} key={project.title} />;
         })}
-
-        <button
-          className='portfolio__view-more'
-          onClick={() => {
-            setRenderAllProjects((prev) => !prev);
-          }}
-          aria-label={`${renderAllProjects ? 'Hide Extra Projects' : 'View All Projects'}`}
-        >
-          {renderAllProjects ? <Minus /> : <Plus />}
-
-          <p className='portfolio__view-more-label'>
-            {renderAllProjects ? 'Hide Extra Projects' : 'View All Projects'}
-          </p>
-        </button>
-
-        {/* remainder of projects */}
-        {renderAllProjects && (
-          <div className='portfolio__extra-projects'>
-            {PROJECTS.filter((project) => !project.featured).map((project, i) => {
-              return <Project data={project} number={i} key={project.title} />;
-            })}
-          </div>
-        )}
       </div>
     </section>
   );
